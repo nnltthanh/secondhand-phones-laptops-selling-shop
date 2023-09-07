@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>THÊM SẢN PHẨM</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+        integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+
+    <style>
+        #sell:hover, #sold:hover {
+            background-color: rgb(11, 71, 191);
+            opacity: 0.5;
+        }
+    
+    </style>
+
+    
+
+</head>
+
+<body onload="init()">
+  
+   
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-12 col-sm-6">
+                <div class="card bg-secondary">
+                    <h5 class="fw-bold text-center text-light mt-3 mb-2
+                            ">HỒ SƠ CỦA TÔI</h5>
+                </div>
+                <section class="mt-4" style="background-color: #eee;">
+                    <div class="container ">
+                        
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="card mb-4">
+                                    <div class="card-body text-center">
+                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
+                                            alt="avatar" class="rounded-circle
+                                                img-fluid" style="width:
+                                                150px;">
+                                        <h5 class="my-3">PHƯƠNG THẢO</h5>
+                                        <p class="text-muted mb-1">Nhà
+                                            bán lẻ</p>
+                                        <p class="text-muted mb-4">Xuân
+                                            Khánh, NK, Cần Thơ</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="card mb-4">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <p class="mb-0">Full
+                                                    name</p>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <p class="text-muted
+                                                        mb-0">TRẦN DƯƠNG PHƯƠNG THẢO</p>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <p class="mb-0">Email</p>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <p class="text-muted
+                                                        mb-0">honghaocp@gmail.com</p>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <p class="mb-0">Phone</p>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <p class="text-muted
+                                                        mb-0">(035) 655-7230</p>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <p class="mb-0">Mobile</p>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <p class="text-muted
+                                                        mb-0">(098) 765-4321</p>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <p class="mb-0">Địa chỉ</p>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <p class="text-muted
+                                                        mb-0">Xuân Khánh,
+                                                    Ninh Kiều, Cần Thơ</p>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-2">
+                                            <div class="col-sm-3">
+                                                <p class="mb-0">Thông
+                                                    tin giới thiệu</p>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <p class="text-muted
+                                                        mb-0">Nhà bán lẻ có
+                                                    3 năm kinh nghiệm và
+                                                    được
+                                                    tin tưởng.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                </section>
+                <div class="container-fluid shadow-sm
+                                        mb-5 bg-body rounded ">
+                        <h3 class="ms-2 mt-0 text
+                                            text-secondary">THÔNG TIN SẢN PHẨM
+                            BÁN</h3>
+                        <table class="table table-borderless
+                                            w-50" editable="true">
+                            <tr>
+                                <div class="row">
+                                    <div class="col-sm-6 ps-3 " >
+                                        <div class="d-grid gap-2 d-md-flex shadow p-3 mb-5 bg-white rounded mask" id="sell" >
+                                            <div >
+                                                <h1><strong class="sell_count">0</strong></h1>
+                                                <h7>Sản phẩm đang bán</h7>
+                                            </div>
+                                            <div >
+                                                <i class="fa-solid fa-laptop text-info mt-2" style="font-size:50pt"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-sm-6 ps-3" >
+                                        <div class="d-grid gap-2 d-md-flex shadow p-3 mb-5 bg-white rounded" id="sold">
+                                            <div >
+                                                <h1><strong class="sold-out">0</strong></h1>
+                                                <h7>Sản phẩm đã bán</h7>
+                                            </div>
+                                            <div>
+                                                <i class="fa-solid fa-square-check text-success ps-4 mt-2" style="font-size:50pt" ></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </tr>
+
+                        </table>
+
+                    </div>
+            </div>
+            <div class="col-12 col-sm-6">
+                <div class=" card bg-secondary">
+                    <h5 class="fw-bold text-center text-light mt-3 mb-2
+                            ">THÔNG TIN SẢN PHẨM BÁN</h5>
+                </div>
+                
+
+                <div class="container mt-2" id="card"></div>
+                <button class="btn btn-primary btn-sm w-10  mt-4 " style="float: right" id="btn-add" data-bs-toggle="modal" data-bs-target="#myModal" ><i class="fa-solid fa-plus bg-primary"></i></button>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal" id="myModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="text text-muted  mt-2 text-center">THÊM SẢN PHẨM</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                  </div>
+                <div>
+                    <form method="post" onsubmit="return addProduct();">
+                        <table class="table table-borderless">
+                            
+                            <tr>
+                                <th>ID:</th>
+                                <td><input id="masp" required maxlength="5" type="text" name="masanpham" placeholder="5 ký tự" ></td>
+                            </tr>
+                            <tr>
+                                <th>Tên sản phẩm:</th>
+                                <td><input id="tsp" required maxlength="50" type="text" name="tencuasanpham" placeholder="Tên sản phẩm"></td>
+                            </tr>
+                            <tr>
+                                <th>Loại Sản phẩm:</th>
+                                <td>
+                                    <select required name="loaisanpham" id="loai" onchange="changeTypeOfProduct()">
+                                        <option value="">-- Select --</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Nhà sản xuất:</th>
+                                <td>
+                                    <select required name="nhasanxuat" id="nsx" onchange="changeManufacturer()">
+                                        <option value="">-- Select --</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Dòng sản phẩm:</th>
+                                <td>
+                                    <select required name="tensanpham" id="dsp">
+                                        <option value="">-- Select --</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Trạng Thái Bảo Hành</th>
+                                <td>
+                                    <select id="trangthaibh" required>
+                                        <option value="chọn">--chọn--</option>
+                                        <option value="LIKE NEW">LIKE
+                                            NEW</option>
+                                        <option value="ĐÃ QUA BẢO
+                                HÀNH">ĐÃ QUA BẢO HÀNH</option>
+                                        <option value="ĐÃ THAY ĐỔI
+                                LINH KIỆN">ĐÃ THAY ĐỔI
+                                            LINH KIỆN</option>
+                                        <option value="TRẦY XƯỚC">TRẦY
+                                            XƯỚC</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Dung lượng</th>
+                                <td>
+                                    <select id="dungluong" required>
+                                        <option value="chọn">--chọn--</option>
+                                        <option value="64GB">64GB</option>
+                                        <option value="128GB">128GB</option>
+                                        <option value="256GB">256GB</option>
+                                        <option value="512GB">512GB</option>
+                                        <option value="1T">1T</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Màu sắc</th>
+                                <td>
+                                    <select id="mausac" required>
+                                        <option value="chọn">--chọn--</option>
+                                        <option value="RED">RED</option>
+                                        <option value="BLUE">BLUE</option>
+                                        <option value="PUPLE">PUPLE</option>
+                                        <option value="PINK">PINK</option>
+                                        <option value="BLACK">BLACK</option>
+                                        <option value="WHITE">WHITE</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Đơn giá:</th>
+                                <td><input id="dg" required pattern="\d" type="number" name="dg" placeholder="là số, đơn vị
+                            VNĐ" min="200000" max="1000000000" step="200000" onchange="checkPrice()"></td>
+                            </tr>
+                            <tr>
+                                <th>Hình ảnh:</th>
+                                <td><input id="files" required type="file" name="myfile" multiple accept=".jpg, .jpeg, .png">
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <th></th>
+                                <td>
+                                    <button id="btn" class="btn
+                            btn-success" type="submit">Thêm
+                                        sản phẩm</button>
+                                    <button type="reset" class="btn
+                            btn-danger" id="btn_reset">Hủy</button>
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                </td>
+                            </tr>
+            
+                        </table>
+            
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <script >
+        
+        
+        var storeList = [{
+            "Loaisp": "MayTinh",
+            "Nhasanxuat": ["MacBook","Asus", "Acer"],
+        }, {
+            "Loaisp": "DienThoai",
+            "Nhasanxuat": ["Apple", "Samsung", "Oppo","Huawei"],
+        }]
+
+        var storeList_MTproduct = [{
+            "name": "MacBook",
+            "categories": ["MacBook Air", "MacBookPro", "MacBook Retina"]
+        },
+        {
+            "name": "Asus",
+            "categories": ["TUF GAMING", "Zephyrus", "Zenbook"]
+        },
+        {
+            "name": "Acer",
+            "categories": ["Aspire", "Swift", "Nitro"]
+        },
+        {
+            "name": "Apple",
+            "categories": ["IphoneSE","IphoneX","Iphone 11", "Iphone 12","IPhone 13", "IPhone 14"],
+        }, {
+            "name": "Samsung",
+            "categories": ["Galaxy", "Note", "Z"]
+        },
+        {
+            "name": "Oppo",
+            "categories": ["Reno", "Find", "A"]
+        },
+        {
+            "name": "Huawei",
+            "categories": ["Nova", "Pro", "P"]
+        }
+        ]
+
+
+
+        var productList = []
+        
+        const SL= document.querySelector(".sell_count");
+
+        var IDSanphamTag, LoaisanphamTag, NSXTag, DongsanphamTag, PriceTag, WanrantyTag, ColorTag, ImgTag, CapacityTag, TensanphamTag
+        var resultTag
+
+        function init() {
+            IDSanphamTag = document.getElementById('masp')
+            LoaisanphamTag = document.getElementById('loai')
+            NSXTag = document.getElementById('nsx')
+            DongsanphamTag = document.getElementById('dsp')
+            PriceTag = document.getElementById('dg')
+            WanrantyTag = document.getElementById('trangthaibh')
+            ColorTag = document.getElementById('mausac')
+            ImgTag = document.getElementById('files')
+            CapacityTag = document.getElementById('dungluong')
+            TensanphamTag= document.getElementById('tsp')
+            resultTag = document.getElementById('card')
+
+
+            for (var item of storeList) {
+                LoaisanphamTag.innerHTML += `<option value="${item.Loaisp}">${item.Loaisp}</option>`
+            }
+
+            console.log("testing...")
+        }
+
+        function changeTypeOfProduct() {
+            LoaispValue = LoaisanphamTag.value
+            categoryList = []
+
+            for (var item of storeList) {
+                if (item.Loaisp == LoaispValue) {
+                    categoryList = item.Nhasanxuat
+                    break
+                }
+            }
+
+            NSXTag.innerHTML = '<option value="">-- Select --</option>'
+            for (var v of categoryList) {
+                NSXTag.innerHTML += `<option value="${v}">${v}</option>`
+            }
+        }
+
+        function changeManufacturer() {
+            NSXValue = NSXTag.value
+            categoryList = []
+
+            for (var item of storeList_MTproduct) {
+                if (item.name == NSXValue) {
+                    categoryList = item.categories
+                    break
+                }
+            }
+
+            DongsanphamTag.innerHTML = '<option value="">-- Select --</option>'
+            for (var v of categoryList) {
+                DongsanphamTag.innerHTML += `<option value="${v}">${v}</option>`
+            }
+        }
+
+
+
+
+        function checkPrice() {
+            priceValue = PriceTag.value
+            
+
+            if(priceValue==0 || isNaN(priceValue) || priceValue < 200000 || priceValue >1000000000 ) {
+                alert('Đơn giá không hợp lệ: Số nguyên > 200.000 và < 1.000.000.000');
+                PriceTag.focus();
+                return false;
+            }
+
+        }
+        // var idValue = IDSanphamTag.value;
+
+        // IDSanphamTag.addEventListener('input', function(){
+            
+        //     for(var it of productList){
+        //         if(idValue=="TN001"){
+        //             alert("ID này đã tồn tại trong hệ thống! Vui lòng nhập id khác");
+        //             IDSanphamTag.focus();
+        //             return false;
+        //         }
+        //     }
+        // });
+       
+
+       
+        var fn1,fn2,fn3;
+
+        function addProduct() {
+
+            fn1= $('input[type=file]')[0].files[0].name;
+            fn2= $('input[type=file]')[0].files[1].name;
+            fn3= $('input[type=file]')[0].files[2].name;
+            item = {
+                'id': IDSanphamTag.value,
+                'name': TensanphamTag.value,
+                'type': LoaisanphamTag.value,
+                'manufacturer': NSXTag.value,
+                'line': DongsanphamTag.value,
+                'warranty': WanrantyTag.value,
+                'capacity': CapacityTag.value,
+                'color': ColorTag.value,
+                'price': PriceTag.value,
+                'fname1': fn1,
+                'fname2': fn2,
+                'fname3': fn3
+                
+            }
+            
+
+           
+            
+
+            
+
+            
+            
+            // console.log(ImgTag[0].name);
+            
+            // console.log("testing Items")
+            // console.log(item)
+            if (currentIndex >= 0) {
+                productList[currentIndex] = item
+                currentIndex = -1
+                
+            } else {
+                productList.push(item)
+            }
+
+            
+
+            console.log(productList)
+            displayProducts()
+
+            IDSanphamTag.value="";
+            TensanphamTag.value="";
+            LoaisanphamTag.value="";
+            NSXTag.value="";
+            DongsanphamTag.value="";
+            WanrantyTag.value="chọn";
+            CapacityTag.value="chọn";
+            ColorTag.value="chọn";
+            PriceTag.value=200000;
+
+            ImgTag.value="";
+ 
+            return false;
+        }
+
+        
+        function displayProducts() {
+            console.log(productList);
+
+            SL.innerHTML = `<strong>${productList.length}</strong>`;
+            resultTag.innerHTML = ''
+            index = 0
+            for (var item of productList) {
+                resultTag.innerHTML += `
+            <div class="col-12 col-sm-12 mt-3">
+            <div class="card mt-3">
+            <div class="row mt-2">
+                <div class="col-12 col-sm-4">
+                    <img class=" rounded-circle mx-auto d-block" src="asset/img/Avatar_seller/Flying around the world-cuate.svg" width="40%" alt="">
+                        <p class=" text-center fw-bold mt-2 text-muted">TRẦN D.PHƯƠNG THẢO</p>
+                        <p class="text-center text-muted">0<i class="text-warning far fa-star fa-sm text-primary"></i>/5 <br>0 REVIEWS </p>
+                        <div class="information">
+                            <p class="text-center text-muted fs-6">
+                                TÌNH TRẠNG:<span class="text-primary">${item.warranty}</span>
+                            </p>
+                            <p class="text-center text-muted fs-6">
+                                BẢO HÀNH:<span class="text-primary">12 Tháng</span>
+                            </p>
+                            <p class="text-center text-muted fs-6">
+                                ĐỔI TRẢ:<span class="text-primary">30 Ngày</span>
+                            </p>
+                        </div>
+                        
+                </div>
+                
+                
+                <div class="col-6 col-sm-4">
+                        <div id="${item.id}" class="carousel slide" data-bs-ride="carousel">
+
+                                    <div class="carousel-indicators">
+                                        <button type="button" data-bs-target="#${item.id}" data-bs-slide-to="0" class="active"></button>
+                                        <button type="button" data-bs-target="#${item.id}" data-bs-slide-to="1"></button>
+                                        <button type="button" data-bs-target="#${item.id}" data-bs-slide-to="2"></button>
+                                    </div>
+
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <img src="asset/img/SELL/${item.fname1}" alt="behind" class="d-block rounded img-fluid"
+                                                style="width: 200px ;  height:150px" />
+
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="asset/img/SELL/${item.fname2}" alt="camera" class="d-block rounded img-fluid"
+                                                style="width: 200px ; height:150px"  />
+
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="asset/img/SELL/${item.fname3}" alt="nghieng" class="d-block rounded img-fluid"
+                                                style="width: 200px; height:150px" />
+                                        </div>
+                                    </div>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#${item.id}" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon"></span>
+                                    </button>
+                                        
+                                    <button class="carousel-control-next" type="button" data-bs-target="#${item.id}" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon"></span>
+                                    </button>
+
+                        </div>
+                        <div class="row " style="margin-top:36px">
+
+                           
+                               
+                                <p class="text-muted text-left fs-6">
+                                    LOẠI: <span class=" font-weight-bold">${item.type}</span>
+                                </p>
+                                <p class="text-muted fs-6 text-left">
+                                    NSX: <span class=" font-weight-bold">${item.manufacturer}</span>
+                                </p>
+                                <p class="text-muted fs-6 text-left">
+                                    DÒNG: <span class=" font-weight-bold">${item.line}</span>
+                                </p>
+                            
+                        </div>
+
+                        
+                </div>
+                <div class="col-6 col-sm-4">
+                <h5 class="mt-2 text-red text-center">${item.name} ${item.capacity} ${item.color}</h5>
+                <h3 class="mt-2 text-danger text-center">${item.price}<sup class="fw-bold">đ</sup>  <br> FREE SHIPING</h3>
+
+
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-5" >
+                    <button class="btn btn-primary  "   onclick="updateItem(${index})" data-bs-toggle="modal" data-bs-target="#myModal" ><i class="fa-solid fa-pen-to-square bg-primary"></i></button>
+                <button class="btn btn-danger me-3" onclick="deleteItem(${index})"><i class="fa-solid fa-trash bg-danger"></i></button>
+
+                </div>
+
+                
+                
+             </div>
+        
+            </div>
+           
+            </div>
+        
+        
+    
+            </div>
+    
+       
+  
+            `;
+                index++
+            }
+        }
+
+        
+        var currentIndex = -1
+
+        function updateItem(index) {
+            currentIndex = index
+
+            item = productList[index]
+
+            IDSanphamTag.value = item.id
+            TensanphamTag.value = item.name
+            LoaisanphamTag.value = item.type
+            NSXTag.value = item.manufacturer
+            DongsanphamTag.value = item.line
+            WanrantyTag.value = item.warranty
+            CapacityTag.value = item.capacity
+            ColorTag.value = item.color
+            PriceTag.value =item.price
+
+            
+        }
+
+       
+        function deleteItem(index) {
+            // quantity--;
+            productList.splice(index, 1)
+            
+            
+
+            displayProducts()
+            
+            
+
+            alert("Hoàn tất xóa sản phẩm!");
+        }
+
+
+        // //Đếm số lượng sản phẩm
+        // document.getElementById('btn').addEventListener('click',incre);
+        
+        
+        // function incre(){
+            
+            
+        //     SL.innerHTML = `<strong>${quantity}</strong>`;
+        // }
+       
+
+        
+
+
+
+        
+    </script>
+</body>
+</html>
+

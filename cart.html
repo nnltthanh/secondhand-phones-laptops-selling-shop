@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="asset/bootstrap-5.2.3-dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="asset/css/style.css">
+    <link rel="stylesheet" href="asset/css/cart.css">
+    <!-- <link rel="stylesheet" href="LTT_B2003917/asset/css/style.css"> -->
+    <title>Giỏ hàng</title>
+
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="app">
+        <header class="header fixed-top">
+            <nav class="navbar navbar-expand-sm container-fluid shadow">
+                <div class="container d-inline">
+                    <div class="row justify-content-center align-items-center my-2">
+                        <div class="col-2">
+                            <a href="home.html" class="navbar-brand">
+                                <img class="brand-img w-100" src="asset/img/logo/mobile-logo-png-1355.png" alt="Logo">
+                            </a>
+                        </div>
+
+                        <div class="col-4">
+                            <div class="button-group d-flex justify-content-between">
+                                <div class="col-sm-6 mx-2">
+                                    <button class="btn text-light text-uppercase w-100 font-weight-bold">Mua</button>
+                                </div>
+                                <div class="col-sm-6">
+                                    <button class="btn text-light text-uppercase w-100 font-weight-bold">Bán</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <button class="navbar-toggler float-end" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#mynavbar">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="collapse navbar-collapse" id="mynavbar">
+                            <div class="col-sm-8">
+                                <ul class="navbar-nav me-auto" role="tablist">
+                                    <li class="nav-item">
+                                        <a href="phone.html" class="nav-link text-light active">
+                                            <i class="fas fa-mobile text-light"></i>
+                                            Điện thoại
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a href="laptop.html" class="nav-link text-light">
+                                            <i class="fas fa-laptop text-light"></i>
+                                            Laptop
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a href="" class="nav-link text-light">
+                                            <i class="fas fa-gift text-light"></i>
+                                            Chương trình khuyến mãi
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a href="" class="nav-link text-light">
+                                            <i class="fas fa-question-circle text-light"></i>
+                                            Hỏi đáp
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-4 d-flex justify-content-end">
+                                <!-- Form -->
+                                <form action="product.html" method="get" class="d-flex">
+                                    <input class="form-control border-radius-only-start" type="search" name="words" placeholder="Tìm kiếm theo tên">
+                                    <button class="btn border-radius-only-end">
+                                        <i class="fas fa-search text-light"></i>
+                                    </button>
+
+                                    
+                                </form>
+                                <button class="btn ml-4 mr-4">
+                                    <i class="fas fa-user text-light"></i>
+                                </button>
+
+                                <button class="btn cart-btn">
+                                    <a href="cart.html"><i class="fas fa-shopping-cart text-light"></i></a>
+                                    <span id="mini-number" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                    </span>
+                                </button>
+                              
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main class="main container mt-130 p-0">
+            <div class="container">
+                <form action="">
+                    <!-- Tiêu đề -->
+                    <div class="row" id="cart">
+                        <h1>GIỎ HÀNG (<span id="count-cart"></span>)
+                        </h1>
+                    </div>
+
+                    <!-- Cột sản phẩm -->
+                    <div class="row justify-content-between">
+                        <div class=" col-md-12  col-lg-8" id="left-side">
+
+                            <div id="empty">
+                                <img id="empty-img" src="asset/img/img-cart/cartEmpty.png" alt="">
+                            </div>
+
+                            <div class="row-cols-8 dltall" id="right-div" style="display: none;">
+
+                                <span id="text-dltall" style="color: rgb(224, 38, 103);" onclick="delAll();">Xóa tất
+                                    cả</span>
+                                <span>
+                                    <svg class="deleteall" onclick="delAll();" xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 448 512">
+                                        <path
+                                            d="M160 400C160 408.8 152.8 416 144 416C135.2 416 128 408.8 128 400V192C128 183.2 135.2 176 144 176C152.8 176 160 183.2 160 192V400zM240 400C240 408.8 232.8 416 224 416C215.2 416 208 408.8 208 400V192C208 183.2 215.2 176 224 176C232.8 176 240 183.2 240 192V400zM320 400C320 408.8 312.8 416 304 416C295.2 416 288 408.8 288 400V192C288 183.2 295.2 176 304 176C312.8 176 320 183.2 320 192V400zM317.5 24.94L354.2 80H424C437.3 80 448 90.75 448 104C448 117.3 437.3 128 424 128H416V432C416 476.2 380.2 512 336 512H112C67.82 512 32 476.2 32 432V128H24C10.75 128 0 117.3 0 104C0 90.75 10.75 80 24 80H93.82L130.5 24.94C140.9 9.357 158.4 0 177.1 0H270.9C289.6 0 307.1 9.358 317.5 24.94H317.5zM151.5 80H296.5L277.5 51.56C276 49.34 273.5 48 270.9 48H177.1C174.5 48 171.1 49.34 170.5 51.56L151.5 80zM80 432C80 449.7 94.33 464 112 464H336C353.7 464 368 449.7 368 432V128H80V432z" />
+                                    </svg>
+                                </span>
+                            </div>
+
+                            <div class="col product-items" id="tbl-pro product-items" style="display: none;">
+
+                                <!-- Them san pham -->
+
+                            </div>
+                        </div>
+
+                        <!-- Cột thông tin thanh toán -->
+                        <div class=" col-12 col-md-12 col-lg-4" id="right-side">
+
+                            <!-- Địa chỉ -->
+                            <div class="row" id="diachi">
+                                <div>
+                                    <h6 id="title-addr">ĐỊA CHỈ NHẬN HÀNG <span> <svg id="edit-addr"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                                <path
+                                                    d="M471.6 21.7c-21.9-21.9-57.3-21.9-79.2 0L362.3 51.7l97.9 97.9 30.1-30.1c21.9-21.9 21.9-57.3 0-79.2L471.6 21.7zm-299.2 220c-6.1 6.1-10.8 13.6-13.5 21.9l-29.6 88.8c-2.9 8.6-.6 18.1 5.8 24.6s15.9 8.7 24.6 5.8l88.8-29.6c8.2-2.8 15.7-7.4 21.9-13.5L437.7 172.3 339.7 74.3 172.4 241.7zM96 64C43 64 0 107 0 160V416c0 53 43 96 96 96H352c53 0 96-43 96-96V320c0-17.7-14.3-32-32-32s-32 14.3-32 32v96c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H96z" />
+                                            </svg>
+                                        </span></h6>
+                                </div>
+                                <br>
+                                <p>Thanh</p>
+                                <p>0123456789</p>
+                                <p>Khu II, Đ. 3/2, Xuân Khánh, Ninh Kiều, Cần Thơ</p>
+                            </div>
+
+                            <!-- Nhập mã giảm giá -->
+                            <div class="row" id="codegg">
+                                <div>
+                                    <h6 id="title-ma">NHẬP MÃ GIẢM GIÁ</h6>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder="Mã giảm giá"
+                                        aria-label="Recipient's username" aria-describedby="button-gg" id="nhapgg">
+                                    <button class="btn btn-outline-primary" type="button" id="button-gg">Áp
+                                        dụng</button>
+                                </div>
+                            </div>
+
+
+                            <!-- Tính tiền -->
+                            <div class="row" id="tinhtien">
+                                <h6 id="title-tien"> TỔNG TIỀN</h6>
+
+                                <div class="tongtien">
+                                    <table class="table table-responsive-sm" id="tbl-money">
+                                        <tbody>
+                                            <tr>
+                                                <td class="tb-col-1" style="border-bottom: none;">Tổng tiền hàng
+                                                </td>
+                                                <td class="tb-col-2" style="border-bottom: none;"><span class="money"
+                                                        id="sub-total">0 <span
+                                                            style="text-decoration: underline; ">đ</span></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tb-col-1" style="border-bottom: none;">Phí vận chuyển
+                                                </td>
+                                                <td class="tb-col-2" style="border-bottom: none;"><span class="money"
+                                                        id="shipping">0 <span
+                                                            style="text-decoration: underline; ">đ</span></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tb-col-1" style="border-bottom: none;">Giảm giá</td>
+                                                <td class="tb-col-2" style="border-bottom: none;"><span class="money"
+                                                        id="sale">0 <span
+                                                            style="text-decoration: underline; ">đ</span></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tb-col-1" style="font-weight: bold; font-size: 1.3rem;">
+                                                </td>
+                                                <td class="tb-col-2"></td>
+                                            </tr>
+                                            <tr style="line-height: 25px; color: rgb(3, 3, 154); font-weight: 800;">
+                                                <td class="tb-col-1" style="font-weight: bold; font-size: 1.3rem;">
+                                                    Thành tiền</td>
+                                                <td class="tb-col-2"><span class="money" id="total">0 <span
+                                                            style="text-decoration: underline; ">đ</span></span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <!-- Nút đặt hàng -->
+                            <div class="row" id="dathang" style="font-weight: bold;">
+                                <button class="btn btn-primary" onclick="confirmbuy()"> Đặt hàng <span
+                                        id="total_product">(0)</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </main>
+        <footer class="footer container-fluid mt-36 shadow-lg text-dark">
+            <div class="container">
+                <div class="row footer-row">
+                    <div class="col footer-col mt-36">
+                        <h6 class="footer-heading text-uppercase text-dark mb-3">Chăm sóc khách hàng</h6>
+                        <ul class="footer-list list-unstyled">
+                            <li class="footer-item mb-2">
+                                <a href="#" class="footer-item_link text-decoration-none text-dark small">Trung tâm
+                                    trợ
+                                    giúp</a>
+                            </li>
+                            <li class="footer-item mb-2">
+                                <a href="#" class="footer-item_link text-decoration-none text-dark small">Hướng dẫn
+                                    mua
+                                    hàng</a>
+                            </li>
+                            <li class="footer-item mb-2">
+                                <a href="#" class="footer-item_link text-decoration-none text-dark small">Chính sách
+                                    đổi trả</a>
+                            </li>
+                            <li class="footer-item mb-2">
+                                <a href="#" class="footer-item_link text-decoration-none text-dark small">Dịch vụ
+                                    bảo
+                                    hành</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col footer-col mt-36">
+                        <h6 class="footer-heading text-uppercase text-dark mb-3">Tìm kiếm cửa hàng</h6>
+                        <ul class="footer-list list-unstyled">
+                            <li class="footer-item mb-2">
+                                <a href="#" class="footer-item_link text-decoration-none text-dark small">Cửa hàng
+                                    gần
+                                    nhất</a>
+                            </li>
+                            <li class="footer-item mb-2">
+                                <a href="#" class="footer-item_link text-decoration-none text-dark small">Mua hàng
+                                    từ
+                                    xa</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col footer-col mt-36">
+                        <h6 class="footer-heading text-uppercase text-dark mb-3">Tìm kiếm nhiều nhất</h6>
+                        <ul class="footer-list list-unstyled">
+                            <li class="footer-item mb-2">
+                                <a href="#" class="footer-item_link text-decoration-none text-dark small">iPhone 11
+                                    đã
+                                    qua sử dụng</a>
+                            </li>
+                            <li class="footer-item mb-2">
+                                <a href="#" class="footer-item_link text-decoration-none text-dark small">iPhone 12
+                                    đã
+                                    qua sử dụng</a>
+                            </li>
+                            <li class="footer-item mb-2">
+                                <a href="#" class="footer-item_link text-decoration-none text-dark small">iPhone 13
+                                    đã
+                                    qua sử dụng</a>
+                            </li>
+                            <li class="footer-item mb-2">
+                                <a href="#" class="footer-item_link text-decoration-none text-dark small">iPhone 14
+                                    đã
+                                    qua sử dụng</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col footer-col mt-36">
+                        <h6 class="footer-heading text-uppercase text-dark mb-3">Theo dõi chúng tôi</h6>
+                        <ul class="footer-list list-unstyled">
+                            <li class="footer-item mb-2">
+                                <a href="#" class="footer-item_link text-decoration-none text-dark small">
+                                    <i class="fab fa-facebook"></i>
+                                    <span class="mx-1">Facebook</span>
+                                </a>
+                            </li>
+                            <li class="footer-item mb-2">
+                                <a href="#" class="footer-item_link text-decoration-none text-dark small">
+                                    <i class="fab fa-instagram"></i>
+                                    <span class="mx-1">Instagram</span>
+                                </a>
+                            </li>
+                            <li class="footer-item mb-2">
+                                <a href="#" class="footer-item_link text-decoration-none text-dark small">
+                                    <i class="fab fa-twitter"></i>
+                                    <span class="mx-1">Twitter</span>
+                                </a>
+                            </li>
+                            <li class="footer-item mb-2">
+                                <a href="#" class="footer-item_link text-decoration-none text-dark small">
+                                    <i class="fab fa-linkedin"></i>
+                                    <span class="mx-1">Linkedin</span>
+                                </a>
+                            </li>
+                            <li class="footer-item mb-2">
+                                <a href="#" class="footer-item_link text-decoration-none text-dark small">
+                                    <i class="fab fa-tiktok"></i>
+                                    <span class="mx-1">Tiktok</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col footer-col mt-36">
+                        <h6 class="footer-heading text-uppercase text-dark mb-3">Phương thức thanh toán</h6>
+                        <ul class="footer-list list-unstyled d-flex flex-wrap">
+                            <li class="footer-item mb-2 d-inline-block">
+                                <a href="#" class="footer-item_link text-decoration-none text-dark small">
+                                    <img class="mx-1" src="asset/img/payment/alepay-logo.png" alt="AlaPay logo">
+                                </a>
+                            </li>
+                            <li class="footer-item mb-2">
+                                <a href="#" class="footer-item_link text-decoration-none text-dark small">
+                                    <img class="mx-1" src="asset/img/payment/moca-logo.png" alt="Moca logo">
+                                </a>
+                            </li>
+                            <li class="footer-item mb-2">
+                                <a href="#" class="footer-item_link text-decoration-none text-dark small">
+                                    <img class="mx-1" src="asset/img/payment/onepay-logo.png" alt="OnePay logo">
+                                </a>
+                            </li>
+                            <li class="footer-item mb-2">
+                                <a href="#" class="footer-item_link text-decoration-none text-dark small">
+                                    <img class="mx-1" src="asset/img/payment/vnpay-logo.png" alt="VNPay logo">
+                                </a>
+                            </li>
+                            <li class="footer-item mb-2">
+                                <a href="#" class="footer-item_link text-decoration-none text-dark small">
+                                    <img class="mx-1" src="asset/img/payment/zalopay-logo.png" alt="ZaloPay logo">
+                                </a>
+                            </li>
+                            <li class="footer-item mb-2">
+                                <a href="#" class="footer-item_link text-decoration-none text-dark small">
+                                    <img class="mx-1" src="asset/img/payment/mpos-logo.png" alt="MPos logo">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <p class="copyright text-center mb-0 text-dark">© 2022 - Bản quyền thuộc về CTU
+                        Shop</p>
+                </div>
+            </div>
+
+        </footer>
+
+        <div class="card chatbox bg-light overflow-hidden">
+            <div class="card-header chabox-header d-flex text-light justify-content-between">
+                <p class="text-center mb-0">Chat với nhân viên tư vấn</p>
+                <i class="fa-solid fa-window-minimize float-end minimize-icon"></i>
+            </div>
+            <div class="card-body chatbox-body">
+                <div class="d-flex align-items-baseline mb-4">
+                    <div class="position-relative user-avatar-container">
+                        <img src="https://nextbootstrap.netlify.app/assets/images/profiles/1.jpg"
+                            class="img-fluid rounded-circle" alt="">
+                        <span
+                            class="position-absolute bottom-0 start-100 translate-middle p-1 bg-success border border-light rounded-circle">
+                            <span class="visually-hidden">Active</span>
+                        </span>
+                    </div>
+
+                    <div class="pe-2">
+                        <div class="card d-inline-block p-2 px-3 m-1">Chào bạn, bạn cần chúng tôi hỗ trợ gì?</div>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-baseline mb-4 text-end justify-content-end">
+                    <div class="pe-2">
+                        <div>
+                            <div class="card d-inline-block p-2 px-3 m-1 text-start">Tôi cần mua điện thoại cũ</div>
+                        </div>
+                        <div>
+                            <div class="card d-inline-block p-2 px-3 m-1 text-start">Có điện thoại cũ nào OK không
+                                bạn
+                                nhỉ?</div>
+                        </div>
+                        <!-- <div class="card d-inline-block p-2 px-3 m-1 text-start">Tôi cần mua điện thoại cũ</div>
+                            <div class="card d-inline-block p-2 px-3 m-1 text-start">Có điện thoại cũ nào OK không bạn nhỉ?</div> -->
+                    </div>
+
+                    <div class="position-relative user-avatar-container">
+                        <img src="https://nextbootstrap.netlify.app/assets/images/profiles/2.jpg"
+                            class="img-fluid rounded-circle" alt="">
+                        <span
+                            class="position-absolute bottom-0 start-100 translate-middle p-1 bg-success border border-light rounded-circle">
+                            <span class="visually-hidden">Active</span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-baseline mb-4">
+                    <div class="position-relative user-avatar-container">
+                        <img src="https://nextbootstrap.netlify.app/assets/images/profiles/1.jpg"
+                            class="img-fluid rounded-circle" alt="">
+                        <span
+                            class="position-absolute bottom-0 start-100 translate-middle p-1 bg-success border border-light rounded-circle">
+                            <span class="visually-hidden">Active</span>
+                        </span>
+                    </div>
+
+                    <div class="pe-2">
+                        <div class="card d-inline-block p-2 px-3 m-1">Chào bạn, bạn cần chúng tôi hỗ trợ gì?</div>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-baseline mb-4 text-end justify-content-end">
+                    <div class="pe-2">
+                        <div class="card d-inline-block p-2 px-3 m-1">Tôi cần mua điện thoại cũ</div>
+                        <div class="card d-inline-block p-2 px-3 m-1">Có điện thoại cũ nào OK không bạn nhỉ?</div>
+                    </div>
+
+                    <div class="position-relative user-avatar-container">
+                        <img src="https://nextbootstrap.netlify.app/assets/images/profiles/2.jpg"
+                            class="img-fluid rounded-circle" alt="">
+                        <span
+                            class="position-absolute bottom-0 start-100 translate-middle p-1 bg-success border border-light rounded-circle">
+                            <span class="visually-hidden">Active</span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-baseline mb-4">
+                    <div class="position-relative user-avatar-container">
+                        <img src="https://nextbootstrap.netlify.app/assets/images/profiles/1.jpg"
+                            class="img-fluid rounded-circle" alt="">
+                        <span
+                            class="position-absolute bottom-0 start-100 translate-middle p-1 bg-success border border-light rounded-circle">
+                            <span class="visually-hidden">Active</span>
+                        </span>
+                    </div>
+
+                    <div class="pe-2">
+                        <div class="card d-inline-block p-2 px-3 m-1">Chào bạn, bạn cần chúng tôi hỗ trợ gì?</div>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-baseline mb-4 text-end justify-content-end">
+                    <div class="pe-2">
+                        <div class="card d-inline-block p-2 px-3 m-1">Tôi cần mua điện thoại cũ</div>
+                        <div class="card d-inline-block p-2 px-3 m-1">Có điện thoại cũ nào OK không bạn nhỉ?</div>
+                    </div>
+
+                    <div class="position-relative user-avatar-container">
+                        <img src="https://nextbootstrap.netlify.app/assets/images/profiles/2.jpg"
+                            class="img-fluid rounded-circle" alt="">
+                        <span
+                            class="position-absolute bottom-0 start-100 translate-middle p-1 bg-success border border-light rounded-circle">
+                            <span class="visually-hidden">Active</span>
+                        </span>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="card-footer p-0 m-0 w-100">
+                <input type="text" class="form-control border-0" placeholder="Nhập tin nhắn để chat ...">
+            </div>
+        </div>
+    </div>
+    <!-- Main -->
+
+
+    <!-- Footer -->
+    <!-- Script -->
+    <div id="mydiv" style="display: none;">
+        <div id="empty"></div>
+        <div id="tbl-pro product-items"></div>
+        <div id="right-div"></div>
+        <div id="count-cart"></div>
+    </div>
+
+    <script src="asset/js/cart.js"></script>
+    <script src="asset/bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="asset/js/products.js"></script>
+</body>
+
+</html>

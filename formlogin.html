@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập</title>
+    <link rel="stylesheet" href="asset/css/login.css">
+    <link rel="stylesheet" href="asset/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-image: url("asset/img/login_register/bg3.webp");
+
+        }
+
+        .bg-image {
+
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -100;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body class="container  mt-5">
+    <div class="bg-image">
+
+    </div>
+
+    <main>
+        <div class="container mt-3">
+            <!-- <div class="container mt-5"> -->
+            <div class="row h-100">
+                <div class="col-12 col-sm-8"></div>
+                <div class="col-12 col-sm-4">
+                    <div class="card">
+                        <form action="#" onsubmit="return frmLoginValidate()" name="frm-login" class="mt-2">
+                            <h2 class="ps-3 pe-3">Đăng nhập</h2>
+                            <p class="ps-3 pe-3">Chào mừng bạn quay lại</p>
+                            <div class="mb-3 mt-3 ps-3 pe-3">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
+                                    <input type="text" class="form-control"
+                                        placeholder="Email/ Số điện thoại/ Tên đăng nhập" name="user_sdt" required>
+                                    <!-- <div class="invalid-feedback">Vui lòng điền vào mục này.</div> -->
+                                </div>
+                            </div>
+                            <div class="mb-3 ps-3 pe-3">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text"><i class="fa-solid fa-key"></i></span>
+                                    <input type="password" class="form-control" id="pwd" placeholder="Mật khẩu"
+                                        name="user_pass" required>
+                                    <!-- <div class="invalid-feedback">Vui lòng điền vào mục này.</div> -->
+                                </div>
+                            </div>
+
+                            <div class="row mb-4 ">
+                                <div class="col d-flex justify-content-center">
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="myCheck" name="remember">
+                                        <label class="form-check-label text-black" for="myCheck">Ghi nhớ tôi</label>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+
+                                    <a href="https://support.google.com/accounts/answer/7682439?hl=vi">Bạn quên mật
+                                        khẩu?
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="text-center pt-1 mb-4 pb-1">
+                                <button class="btn btn-primary" type="submit">ĐĂNG NHẬP
+                                </button>
+                            </div>
+
+                            <div class="divider d-flex align-items-center">
+                                <p class="text-center mx-3 mb-0" style="color: black;">HOẶC</p>
+                            </div>
+
+
+                            <div class="text-center mb-3">
+                                <a href="https://www.facebook.com/" style="text-decoration:none ; ">
+                                    <img src="asset/img/login_register/facebook_logo.png" alt="" width="45px">
+
+                                </a>
+
+                                <a href="https://www.google.com/intl/vi/gmail/about/" style="text-decoration:none ;">
+                                    <img src="asset/img/login_register/google_logo.png" alt="" width="57px">
+                                </a>
+
+                                <a href="https://www.icloud.com/" style="text-decoration: none;">
+                                    <img src="asset/img/login_register/apple_logo.png" alt="" width="53px">
+                                </a>
+
+                                <p>
+                                    Chưa có tài khoản?
+                                    <a href="formregister.html">Đăng kí ngay</a>
+                                </p>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="asset/js/login.js"></script>
+
+</body>
+
+</html>

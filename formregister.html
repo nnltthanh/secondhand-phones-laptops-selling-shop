@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký</title>
+    <link rel="stylesheet" href="asset/css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        body{
+            background-image: url("asset/img/login_register/bg3.webp");
+
+        }
+        .bg-image {
+            
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -100;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+
+</head>
+
+<body class="container  mt-5">
+    <div class="bg-image">
+
+    </div>
+    <header></header>
+    <nav></nav>
+    <main>
+        <div class="container mt-3 mb-3">
+            <div class="row h-100">
+                <div class="col-12 col-sm-8"></div>
+                <div class="col-12 col-sm-4">
+                    <div class="card ">
+                        <form action="#" method="post" name="frm-register" class="mt-2">
+                            <div class="row mt-2">
+                                <div class="col-12 col-sm-6">
+                                    <h2 class="ps-4 pe-3" style="left: 15px;">Đăng ký</h2>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                            <a href="home.html"> <img src="asset/img/logo/mobile-logo-png-1355.png" alt="" style="max-width:80px; float:right;position:absolute;right:12px"></a>
+                                </div>
+                            </div>
+                            
+                            <p class="ps-3 pe-3">Tạo tài khoản ngay</p>
+                            <div class="mb-3 mt-3 ps-3 pe-3">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text"><i class="fa-solid fa-phone-volume"></i></span>
+                                    <input type="text" id="sdt" class="form-control" placeholder="Số điện thoại"
+                                        name="sdt" required>
+                                </div>
+                                <div class="ml-3">
+                                    <p id="invalid-fill-sdt" class="text text-danger fs-6 ml-5" style="display:none;">Số
+                                        điện thoại
+                                        không đúng định dạng</p>
+                                </div>
+
+
+                            </div>
+                            <div class="mb-3 ps-3 pe-3">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text"><i class="fa-solid fa-key"></i></span>
+                                    <input type="password" class="form-control" id="pwd"
+                                        placeholder="Mật khẩu ít nhất 8 ký tự" name="pswd" required>
+                                </div>
+                                <div>
+                                    <span id="invalid-fill-mk" class="text text-danger fs-6 " style="display:none;">Mật
+                                        khẩu không
+                                        đúng định dạng</span>
+                                </div>
+                            </div>
+
+                            <div class="col d-flex justify-content-center ps-3 pe-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="myCheck" name="remember">
+                                    <label class="form-check-label text-black" for="myCheck">
+                                        <p>
+                                            Bằng việc đăng ký, bạn đã đồng ý với
+                                            <b>Điều khoản dịch vụ</b> &
+                                            <b>Chính sách bảo mật </b>
+                                        </p>
+
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="text-center pt-1 mb-4 pb-1">
+                                <button class="btn btn-primary" type="submit">ĐĂNG KÝ
+                                </button>
+                            </div>
+
+                            <div class="divider d-flex align-items-center">
+                                <p class="text-center mx-3 mb-0" style="color: black;">HOẶC</p>
+                            </div>
+
+
+                            <div class="text-center mb-3">
+                                <a href="https://www.facebook.com/" style="text-decoration:none ; ">
+                                    <img src="asset/img/login_register/facebook_logo.png" alt="" width="45px">
+
+                                </a>
+
+                                <a href="https://www.google.com/intl/vi/gmail/about/" style="text-decoration:none ;">
+                                    <img src="asset/img/login_register/google_logo.png" alt="" width="57px">
+                                </a>
+
+                                <a href="https://www.icloud.com/" style="text-decoration: none;">
+                                    <img src="asset/img/login_register/apple_logo.png" alt="" width="53px">
+                                </a>
+
+                                <p>
+                                    Bạn đã có tài khoản?
+                                    <a href="formlogin.html">Đăng nhập ngay</a>
+                                </p>
+
+                            </div>
+                    </div>
+
+
+                    </form>
+                </div>
+
+
+            </div>
+        </div>
+        <!-- </div> -->
+        </div>
+
+        </div>
+
+        </div>
+
+    </main>
+    
+
+    <script>
+        var frm = document.forms['frm-register'];
+        var frm_sdt = frm.sdt;
+        var pw = frm.pswd;
+
+        const id_sdt = document.getElementById("sdt");
+        const id_pw = document.getElementById("pwd");
+
+        var strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
+        var reg_sdt =
+            /((096|097|098|032|033|034|035|036|037|038|039|086|091|094|083|084|085|081|082|088|090|093|070|079|076|077|078|089)+([0-9]{7}))/;
+
+
+        // window.addEventListener("load", () => {
+
+
+        //     const isValid = id_sdt.value.length === 0 || reg_sdt.test(id_sdt.value);
+        //     id_sdt.className = isValid ? "valid" : "invalid";
+        // });
+        ///Phần xử lý sự kiện khi user nhập sai
+
+        id_sdt.addEventListener("input", () => {
+            const isValid = id_sdt.value.length === 0 || reg_sdt.test(id_sdt.value);
+            if (isValid) {
+                document.getElementById("invalid-fill-sdt").style.display = 'none';
+            } else {
+                document.getElementById("invalid-fill-sdt").style.display = 'block';
+            }
+        });
+
+        id_pw.addEventListener("input", () => {
+            const isValid = id_pw.value.length === 0 || strongRegex.test(id_pw.value);
+            if (isValid) {
+                document.getElementById("invalid-fill-mk").style.display = 'none';
+            } else {
+                document.getElementById("invalid-fill-mk").style.display = 'block';
+            }
+        });
+
+
+        function Redirect() {
+            location.replace("http://127.0.0.1:5500/PHONES/formlogin.html");
+        }
+        // /Phần xử lý sự kiện khi user ấn submit
+        frm.addEventListener("submit", (event) => {
+            event.preventDefault();
+
+
+
+            const frm_isValid_sdt = id_sdt.value.length !== 0 && reg_sdt.test(id_sdt.value);
+            const frm_isValid_pw = id_pw.value.length !== 0 && strongRegex.test(id_pw.value);
+
+
+
+            if (frm_isValid_sdt) {
+
+                document.getElementById("invalid-fill-sdt").style.display = 'none';
+
+            } else {
+                document.getElementById("invalid-fill-sdt").style.display = 'block';
+            }
+
+            if (frm_isValid_pw) {
+
+                document.getElementById("invalid-fill-mk").style.display = 'none';
+
+            } else {
+                document.getElementById("invalid-fill-mk").style.display = 'block';
+            }
+
+            if (frm_isValid_sdt === frm_isValid_pw) {
+                alert("Đăng ký tài khoản thành công");
+                document.write("Bạn sẽ được chuyển đến trang đăng nhập trong giây lát!")
+
+                setTimeout(Redirect(), 3000);
+
+            } else {
+                alert("Đăng ký tài khoản thất bại do thông tin sai định dạng");
+            }
+
+        });
+
+
+    </script>
+</body>
+
+</html>

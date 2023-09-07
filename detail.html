@@ -1,0 +1,1608 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="asset/img/Icon/mobile-phone.png"
+            type="image/x-icon" />
+
+        <link rel="stylesheet"
+            href="asset/bootstrap-5.2.3-dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="asset/css/style.css">
+        <script src="
+            https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/u
+            md/popper.min.js "></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+            integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+        link
+        <title>Chi Tiết Bán Hàng</title>
+        <style>
+        .card {
+            transition: all 0.5s ease-in-out;
+            cursor: pointer;
+            box-shadow: 0px 0px 6px -4px rgb(0 0 0 / 75%);
+            border-radius: 10px;
+        }
+
+        .btn-rounded {
+            border-radius: 15px;
+        }
+
+        .p-3 {
+            padding: 1rem !important;
+        }
+
+        .lb:hover {
+            width: 40px;
+            border-color: green;
+        }
+
+        /*STAR*/
+        div.stars {
+            width: 30px;
+            display: inline-block;
+        }
+
+        input.star {
+            display: none;
+        }
+
+        label.star {
+            float: right;
+            padding: 10px;
+            font-size: 20px;
+            color: #444;
+            transition: all .2s;
+        }
+
+        input.star:checked~label.star:before {
+            content: '\f005';
+            color: #FD4;
+            transition: all .25s;
+        }
+
+        input.star-5:checked~label.star:before {
+            color: #FE7;
+            text-shadow: 0 0 20px #952;
+        }
+
+        input.star-1:checked~label.star:before {
+            color: #F62;
+        }
+
+        label.star:hover {
+            transform: rotate(-15deg) scale(1.3);
+        }
+
+        label.star:before {
+            content: '\f006';
+            font-family: FontAwesome;
+        }
+
+        /*END STRAR*/
+
+        .rating {
+            color: #FE7;
+        }
+
+        .list-inline li {
+            align-items: center;
+            display: flex;
+            margin-bottom: 7px;
+        }
+
+        .list-inline .number-star {
+            font-size: 12px;
+            line-height: 14px;
+            text-align: left;
+            width: 25px;
+        }
+
+        .list-inline .percent-line {
+            background-color: #eee;
+            height: 4px;
+            position: relative;
+            width: 150px;
+        }
+
+        .list-inline .timing {
+            background-color: #fe8c23;
+            left: 0;
+            height: 4px;
+            position: absolute;
+            top: 0;
+        }
+
+
+        /*Phần comment nổi bật*/
+        .comment__item {
+            position: relative;
+            border-bottom: 1px solid #f1f1f1;
+            padding: 15px 0;
+            margin-left: 10px;
+        }
+
+        .txtname {
+            font-weight: bold;
+            margin-right: 8px;
+            text-transform: capitalize;
+        }
+
+        .tickbuy {
+            color: #2ba832;
+            font-size: 12px;
+            line-height: 14px;
+        }
+
+        .text-name,
+        .tickbuy {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .comment-star,
+        .intro-future {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .comment-content .cmt-txt {
+            font-size: 14px;
+            line-height: 20px;
+        }
+
+        .click-like,
+        .click-cmt,
+        .click-use {
+            color: #2f80ed;
+            font-size: 13px;
+            margin-right: 5px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .click-use {
+            border-left: 1px solid #e0e0e0;
+            color: #999;
+            font-size: 12px;
+            padding-left: 5px;
+            position: relative;
+        }
+
+        /*Hết phần commnent nổi bật*/
+
+        /*Phần gửi đánh giá và xem đánh giá*/
+        .comment-btn {
+            display: flex;
+            padding: 15px 10px;
+        }
+
+        /*Phần cấu hình iphone*/
+        #section1 {
+            padding-top: 50px;
+            height: 500px;
+            color: gray;
+            background-color: #f1f1f1;
+        }
+
+        #section2 {
+            padding-top: 50px;
+            height: 500px;
+            color: gray;
+            background-color: #673ab7;
+        }
+
+        #section3 {
+            padding-top: 50px;
+            height: 500px;
+            color: gray;
+            background-color: #ff9800;
+        }
+
+        /*Phần nut xem chi tiết*/
+        .btn-detail {
+            border: 1px solid #2f80ed;
+            border-radius: 5px;
+            color: #2f80ed;
+            display: block;
+            max-width: 340px;
+            text-align: center;
+        }
+
+        .btn-detail.btn-short-spec {
+            cursor: pointer;
+        }
+
+        .btn-detail.not-have-instruction {
+            cursor: pointer;
+        }
+    </style>
+    </head>
+
+    <body>
+        <header class="header fixed-top">
+            <nav class="navbar navbar-expand-sm container-fluid shadow">
+                <div class="container d-inline">
+                    <div class="row justify-content-center align-items-center
+                        my-2">
+                        <div class="col-2">
+                            <a href="home.html" class="navbar-brand">
+                                <img class="brand-img w-100"
+                                    src="asset/img/logo/mobile-logo-png-1355.png"
+                                    alt="Logo">
+                            </a>
+                        </div>
+
+                        <div class="col-4">
+                            <div class="button-group d-flex
+                                justify-content-between">
+                                <div class="col-sm-6 mx-2">
+                                    <button class="btn text-light text-uppercase
+                                        w-100 font-weight-bold">Mua</button>
+                                </div>
+                                <div class="col-sm-6">
+                                    <button class="btn text-light text-uppercase
+                                        w-100 font-weight-bold">Bán</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <button class="navbar-toggler float-end"
+                                type="button" data-bs-toggle="collapse"
+                                data-bs-target="#mynavbar">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="collapse navbar-collapse" id="mynavbar">
+                            <div class="col-sm-8">
+                                <ul class="navbar-nav me-auto" role="tablist">
+                                    <li class="nav-item">
+                                        <a href="phone.html" class="nav-link
+                                            text-light active">
+                                            <i class="fas fa-mobile text-light"></i>
+                                            Điện thoại
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a href="laptop.html" class="nav-link
+                                            text-light">
+                                            <i class="fas fa-laptop text-light"></i>
+                                            Laptop
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a href="" class="nav-link text-light">
+                                            <i class="fas fa-gift text-light"></i>
+                                            Chương trình khuyến mãi
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a href="" class="nav-link text-light">
+                                            <i class="fas fa-question-circle
+                                                text-light"></i>
+                                            Hỏi đáp
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-4 d-flex justify-content-end">
+                                <!-- Form -->
+                                <form action="product.html" method="get"
+                                    class="d-flex">
+                                    <input class="form-control
+                                        border-radius-only-start" type="search"
+                                        name="words"
+                                        placeholder="Tìm kiếm theo tên">
+                                    <button class="btn border-radius-only-end">
+                                        <i class="fas fa-search text-light"></i>
+                                    </button>
+
+
+                                </form>
+                                <button class="btn ml-4 mr-4">
+                                    <i class="fas fa-user text-light"></i>
+                                </button>
+
+                                <button class="btn cart-btn">
+                                    <a href="cart.html"><i class="fas fa-shopping-cart text-light"></i></a>
+                                    <span id="mini-number" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main class="main container mt-130 p-0">
+            <div class="container mt-4">
+                <div class="row">
+                    <div class="col-12 col-sm-5 px-1">
+                        <h5 class="text-danger">iPHONE 14 ĐÃ QUA SỬ DỤNG</h5>
+                        <div class="d-flex justify-content-between
+                            align-items-center mb-2">
+                            <div class="ratings">
+                                <i class="fas fa-star star-icon rating"></i>
+                                <i class="fas fa-star star-icon rating"></i>
+                                <i class="fas fa-star star-icon rating"></i>
+                                <i class="fas fa-star star-icon rating"></i>
+                                <i class="fas fa-star star-icon rating"></i>
+                                &nbsp;
+                                <a href="#danhgia" class="text-decoration-none">Đánh
+                                    giá</a>
+                            </div>
+
+
+                        </div>
+
+                        <div id="ipdemo" class="carousel slide"
+                            data-bs-ride="carousel">
+
+                            <!-- Indicators/dots -->
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#ipdemo"
+                                    data-bs-slide-to="0" class="active"></button>
+                                <button type="button" data-bs-target="#ipdemo"
+                                    data-bs-slide-to="1"></button>
+                                <button type="button" data-bs-target="#ipdemo"
+                                    data-bs-slide-to="2"></button>
+                                <button type="button" data-bs-target="#ipdemo"
+                                    data-bs-slide-to="3"></button>
+                                <button type="button" data-bs-target="#ipdemo"
+                                    data-bs-slide-to="4"></button>
+                                <button type="button" data-bs-target="#ipdemo"
+                                    data-bs-slide-to="5"></button>
+                                <button type="button" data-bs-target="#ipdemo"
+                                    data-bs-slide-to="6"></button>
+                            </div>
+
+                            <!-- The slideshow/carousel -->
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img
+                                        src="asset/img/Iphone/14-series/iPhone-14.png"
+                                        alt="iPhone-114"
+                                        style="width:100%; height:450px;" />
+                                </div>
+                                <div class="carousel-item active">
+                                    <img
+                                        src="asset/img/Iphone/14-series/iPhone-14-compare.jpg"
+                                        alt=""
+                                        style="width:100%; height:450px;" />
+                                </div>
+                                <div class="carousel-item active">
+                                    <img
+                                        src="asset/img/Iphone/14-series/iphone-14-thumb-yt-1020x570.jpg"
+                                        alt=""
+                                        style="width:100%;height:450px;" />
+                                </div>
+                                <div class="carousel-item active">
+                                    <img
+                                        src="asset/img/Iphone/14-series/iphone-14638028226351078907.jpg"
+                                        alt=""
+                                        style="width:100%; height:450px;" />
+                                </div>
+                                <div class="carousel-item active">
+                                    <img
+                                        src="asset/img/Iphone/14-series/iphone-14638028226353998914.jpg"
+                                        alt=""
+                                        style="width:100%; height:450px;" />
+                                </div>
+                                <div class="carousel-item active">
+                                    <img
+                                        src="asset/img/Iphone/14-series/iphone-14638028226360908825.jpg"
+                                        alt=""
+                                        style="width:100%;height:450px;" />
+                                </div>
+                                <div class="carousel-item active">
+                                    <img
+                                        src="asset/img/Iphone/14-series/iphone-14638028226353998914.jpg"
+                                        alt=""
+                                        style="width:100%; height:450px;" />
+                                </div>
+
+                            </div>
+
+                            <button class="carousel-control-prev" type="button"
+                                data-bs-target="#ipdemo"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon"></span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#ipdemo"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+                            </button>
+
+                        </div>
+
+                        <h5 class="text-center">Giá mua cũ chỉ từ <span
+                                class="text-danger fs-3">20.000.000<sup>đ</sup></span></h5>
+                        <p class="text-center text-decoration-line-through">Giá
+                            thị trường 23.990.000VNĐ</p>
+
+                        <!-- SCROLLSPY -->
+                        <div class="container mt-3 mb-5">
+                            <h5 class="text text-secondary mx-3">CẤU HÌNH IPHONE</h5>
+                            <nav class="navbar navbar-expand-sm bg-light
+                                navbar-collapse navbar-fixed-top">
+                                <div class="container-fluid">
+                                    <ul class="navbar-nav">
+                                        <li class="nav-item card">
+                                            <a class="nav-link"
+                                                href="#section1" id="nav128">Iphone14
+                                                128GB</a>
+                                        </li>
+                                        <li class="nav-item card">
+                                            <a class="nav-link" href="#section2"
+                                                id="nav256">Iphone14 256GB</a>
+                                        </li>
+                                        <li class="nav-item card">
+                                            <a class="nav-link" href="#section3"
+                                                id="nav512">Iphone14 512GB</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </nav>
+
+                            <div id="section1" class="container-fluid shadow-sm
+                                p-3 mb-5 bg-body rounded" style="margin-bottom: 200px;">
+                                <h3 class="ms-2 mt-0">Cấu hình chi tiết iPhone14
+                                    128GB</h3>
+                                <table class="table table-borderless">
+                                    <tr>
+                                        <th>Màn hình:</th>
+                                        <td class="text-secondary">OLED, 6.1",
+                                            Super Retina XDR</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Hệ điều hành:</th>
+                                        <td class="text-secondary">iOS 16</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Camera sau:</th>
+                                        <td class="text-secondary">Chính 48 MP &
+                                            Phụ 12 MP, 12 MP</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Camera trước:</th>
+                                        <td class="text-secondary">12 MP</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Chip:</th>
+                                        <td class="text-secondary">Apple A16
+                                            Bionic</td>
+                                    </tr>
+                                    <tr>
+                                        <th>RAM:</th>
+                                        <td class="text-secondary">6 GB</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Dung lượng lưu trữ:</th>
+                                        <td class="text-secondary">128 GB</td>
+                                    </tr>
+                                    <tr>
+                                        <th>SIM:</th>
+                                        <td class="text-secondary">1 Nano SIM &
+                                            1 eSIM, Hỗ trợ 5G</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Pin, Sạc:</th>
+                                        <td class="text-secondary">4323 mAh, 20W</td>
+                                    </tr>
+                                    <tr class="mt-5 ">
+                                        <td colspan="2">
+                                            <span
+                                                class="btn-detail btn-short-spec
+                                                not-have-instruction mx-auto
+                                                py-1 px-auto">
+                                                <a class="text-decoration-none "
+                                                    href="#">Xem thêm cấu hình
+                                                    chi tiết</a>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                            </div>
+                            <div id="section2" class="container-fluid shadow-sm
+                                p-3 mb-5 bg-body rounded "
+                                style="display: none">
+                                <h3 class="ms-2 mt-0">Cấu hình chi tiết iPhone14
+                                    256GB</h3>
+                                <table class="table table-borderless">
+                                    <tr>
+                                        <th>Màn hình:</th>
+                                        <td class="text-secondary">OLED, 6.1",
+                                            Super Retina XDR</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Hệ điều hành:</th>
+                                        <td class="text-secondary">iOS 16</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Camera sau:</th>
+                                        <td class="text-secondary">Chính 48 MP &
+                                            Phụ 12 MP, 12 MP</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Camera trước:</th>
+                                        <td class="text-secondary">12 MP</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Chip:</th>
+                                        <td class="text-secondary">Apple A16
+                                            Bionic</td>
+                                    </tr>
+                                    <tr>
+                                        <th>RAM:</th>
+                                        <td class="text-secondary">6 GB</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Dung lượng lưu trữ:</th>
+                                        <td class="text-secondary">256 GB</td>
+                                    </tr>
+                                    <tr>
+                                        <th>SIM:</th>
+                                        <td class="text-secondary">1 Nano SIM &
+                                            1 eSIM, Hỗ trợ 5G</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Pin, Sạc:</th>
+                                        <td class="text-secondary">4323 mAh, 20W</td>
+                                    </tr>
+                                    <tr class="mt-5 ">
+                                        <td colspan="2">
+                                            <span
+                                                class="btn-detail btn-short-spec
+                                                not-have-instruction mx-auto
+                                                py-1 px-auto">
+                                                <a class="text-decoration-none "
+                                                    href="#">Xem thêm cấu hình
+                                                    chi tiết</a>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                            </div>
+                            <div id="section3" class="container-fluid shadow-sm
+                                p-3 mb-5 bg-body rounded"
+                                style="display: none">
+                                <h3 class="ms-2 mt-0 mb-5">Cấu hình chi tiết iPhone14
+                                    512GB</h3>
+                                <table class="table table-borderless">
+                                    <tr>
+                                        <th>Màn hình:</th>
+                                        <td class="text-secondary">OLED, 6.1",
+                                            Super Retina XDR</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Hệ điều hành:</th>
+                                        <td class="text-secondary">iOS 16</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Camera sau:</th>
+                                        <td class="text-secondary">Chính 48 MP &
+                                            Phụ 12 MP, 12 MP</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Camera trước:</th>
+                                        <td class="text-secondary">12 MP</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Chip:</th>
+                                        <td class="text-secondary">Apple A16
+                                            Bionic</td>
+                                    </tr>
+                                    <tr>
+                                        <th>RAM:</th>
+                                        <td class="text-secondary">6 GB</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Dung lượng lưu trữ:</th>
+                                        <td class="text-secondary">512 GB</td>
+                                    </tr>
+                                    <tr>
+                                        <th>SIM:</th>
+                                        <td class="text-secondary">1 Nano SIM &
+                                            1 eSIM, Hỗ trợ 5G</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Pin, Sạc:</th>
+                                        <td class="text-secondary">4323 mAh, 20W</td>
+                                    </tr>
+                                    <tr class="mt-5 ">
+                                        <td colspan="2">
+                                            <span
+                                                class="btn-detail btn-short-spec
+                                                not-have-instruction mx-auto
+                                                py-1 px-auto">
+                                                <a class="text-decoration-none "
+                                                    href="#">Xem thêm cấu hình
+                                                    chi tiết</a>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-7">
+
+                        <h5 style="margin-top:80px;">
+                            So sánh giá iPHONE 14 giữa các kênh bán và đưa ra
+                            lựa chọn tốt
+                            nhất cho bạn
+                        </h5>
+                        <section>
+                            <!-- Section: Filters -->
+                            <section class="mt-5" id="filters"
+                                data-auto-filter="true">
+
+
+                                <!-- Section: Condition -->
+                                <section class="mb-4"
+                                    data-filter="donvivanchuyen">
+                                    <h6 class="font-weight-bold mb-3">ĐƠN VỊ VẬN
+                                        CHUYỂN</h6>
+                                    <div class="form-check form-check-inline
+                                        mb-3">
+                                        <input class="form-check-input"
+                                            type="checkbox" value="Express"
+                                            id="condition-checkbox"
+                                            name="condition" />
+
+                                        <label class="form-check-label
+                                            text-uppercase small text-muted"
+                                            for="condition-checkbox">
+                                            <img
+                                                src="asset/img/Dilivery/express.jpg"
+                                                alt="" style="width: 30px" />Express
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check form-check-inline
+                                        mb-3">
+                                        <input class="form-check-input"
+                                            type="checkbox" value="ExpressVPN"
+                                            id="condition-checkbox2"
+                                            name="condition" />
+
+                                        <label class="form-check-label
+                                            text-uppercase small text-muted"
+                                            for="condition-checkbox2">
+                                            <img
+                                                src="asset/img/Dilivery/ExpressVPN.png"
+                                                alt=""
+                                                style="width: 20px" />ExpressVPN
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline
+                                        mb-3">
+                                        <input class="form-check-input"
+                                            type="checkbox" value="GHTK"
+                                            id="condition-checkbox3"
+                                            name="condition" />
+
+                                        <label class="form-check-label
+                                            text-uppercase small text-muted"
+                                            for="condition-checkbox3">
+                                            <img
+                                                src="asset/img/Dilivery/giaohangtietkiem.jpg"
+                                                alt=""
+                                                style="width: 50px" />GHTK
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline
+                                        mb-3">
+                                        <input class="form-check-input"
+                                            type="checkbox" value="NinjaVan"
+                                            id="condition-checkbox4"
+                                            name="condition" />
+
+                                        <label class="form-check-label
+                                            text-uppercase small text-muted"
+                                            for="condition-checkbox4">
+                                            <img
+                                                src="asset/img/Dilivery/ninjavan.jpg"
+                                                alt="" style="width: 30px" />NinjaVan
+                                        </label>
+                                    </div>
+
+                                </section>
+                                <!-- Section: Condition -->
+
+                                <!-- Section: Avg. Customer Review -->
+
+
+                                <section class="mb-4">
+                                    <h6 class="font-weight-bold mb-3">ĐÁNH GIÁ
+                                        CỦA KHÁCH HÀNG</h6>
+
+                                    <div class="d-flex justify-content-between
+                                        align-items-center mb-2">
+                                        <div class="ratings">
+                                            <input class="star star-5"
+                                                id="star-5" type="radio"
+                                                name="star" />
+                                            <label class="star star-5"
+                                                for="star-5"></label>
+                                            <input class="star star-4"
+                                                id="star-4" type="radio"
+                                                name="star" />
+                                            <label class="star star-4"
+                                                for="star-4"></label>
+                                            <input class="star star-3"
+                                                id="star-3" type="radio"
+                                                name="star" />
+                                            <label class="star star-3"
+                                                for="star-3"></label>
+                                            <input class="star star-2"
+                                                id="star-2" type="radio"
+                                                name="star" />
+                                            <label class="star star-2"
+                                                for="star-2"></label>
+                                            <input class="star star-1"
+                                                id="star-1" type="radio"
+                                                name="star" />
+                                            <label class="star star-1"
+                                                for="star-1"></label>
+                                        </div>
+                                    </div>
+                                </section>
+                                <!-- Section: Avg. Customer Review -->
+
+                                <!-- Section: Price -->
+                                <section class="mb-4">
+                                    <h6 class="font-weight-bold mb-3">GIÁ</h6>
+                                    <div class="form-check form-check-inline
+                                        mb-3">
+                                        <input class="form-check-input"
+                                            type="radio" name="flexRadioDefault"
+                                            id="price-radio" />
+                                        <label class="form-check-label
+                                            text-uppercase small text-muted"
+                                            for="price-radio">
+                                            Dưới 17tr
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check form-check-inline
+                                        mb-3">
+                                        <input class="form-check-input"
+                                            type="radio" name="flexRadioDefault"
+                                            id="price-radio2" />
+                                        <label class="form-check-label
+                                            text-uppercase small text-muted"
+                                            for="price-radio2">
+                                            Từ 17tr đến 20tr
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check form-check-inline
+                                        mb-3">
+                                        <input class="form-check-input"
+                                            type="radio" name="flexRadioDefault"
+                                            id="price-radio3" />
+                                        <label class="form-check-label
+                                            text-uppercase small text-muted"
+                                            for="price-radio3">
+                                            Từ 20tr đến 22tr
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check form-check-inline
+                                        mb-3">
+                                        <input class="form-check-input"
+                                            type="radio" name="flexRadioDefault"
+                                            id="price-radio4" />
+                                        <label class="form-check-label
+                                            text-uppercase small text-muted"
+                                            for="price-radio4">
+                                            Từ 22tr đến 24tr
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check form-check-inline
+                                        mb-3">
+                                        <input class="form-check-input"
+                                            type="radio" name="flexRadioDefault"
+                                            id="price-radio5" />
+                                        <label class="form-check-label
+                                            text-uppercase small text-muted"
+                                            for="price-radio5">
+                                            Trên 24tr
+                                        </label>
+                                    </div>
+                                </section>
+                                <!-- Section: Price -->
+
+                                <!-- Section: Size -->
+                                <section class="mb-4" data-filter="size">
+                                    <h6 class="font-weight-bold mb-3">BỘ NHỚ</h6>
+                                    <div class="form-check form-check-inline
+                                        mb-3">
+                                        <input class="form-check-input"
+                                            type="checkbox" value="34"
+                                            id="price-checkbox" />
+                                        <label class="form-check-label
+                                            text-uppercase small text-muted"
+                                            for="price-checkbox">
+                                            64GB
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check form-check-inline
+                                        mb-3">
+                                        <input class="form-check-input"
+                                            type="checkbox" value="36"
+                                            id="price-checkbox2" />
+                                        <label class="form-check-label
+                                            text-uppercase small text-muted"
+                                            for="price-checkbox2">
+                                            128GB
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check form-check-inline
+                                        mb-3">
+                                        <input class="form-check-input"
+                                            type="checkbox" value="38"
+                                            id="price-checkbox3" />
+                                        <label class="form-check-label
+                                            text-uppercase small text-muted"
+                                            for="price-checkbox3">
+                                            256GB
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check form-check-inline
+                                        mb-3">
+                                        <input class="form-check-input"
+                                            type="checkbox" value="40"
+                                            id="price-checkbox4" />
+                                        <label class="form-check-label
+                                            text-uppercase small text-muted"
+                                            for="price-checkbox4">
+                                            512GB
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline
+                                        mb-3">
+                                        <input class="form-check-input"
+                                            type="checkbox" value="40"
+                                            id="price-checkbox4" />
+                                        <label class="form-check-label
+                                            text-uppercase small text-muted"
+                                            for="price-checkbox4">
+                                            1TB
+                                        </label>
+                                    </div>
+                                </section>
+                                <!-- Section: Size -->
+
+                                <!-- Section: Color -->
+                                <section class="mb-4" data-filter="color">
+                                    <h6 class="font-weight-bold mb-3">MÀU SẮC</h6>
+                                    <div class="form-check form-check-inline m-0
+                                        p-0 pr-3 pl-2">
+                                        <input class="btn-check" type="radio"
+                                            name="colorRadio" id="colorRadio1"
+                                            value="white" />
+                                        <label class="btn btn-rounded
+                                            p-3 lb bg-lihgt" for="colorRadio1"></label>
+                                    </div>
+
+                                    <div class="form-check form-check-inline m-0
+                                        p-0 pr-3">
+                                        <input class="btn-check border
+                                            border-secondary" type="radio"
+                                            name="colorRadio" id="colorRadio2"
+                                            value="grey" />
+                                        <label class="btn btn-rounded p-3 lb"
+                                            for="colorRadio2"
+                                            style="background-color: #bdbdbd"></label>
+                                    </div>
+
+                                    <div class="form-check form-check-inline m-0
+                                        p-0 pr-3">
+                                        <input class="btn-check border
+                                            border-secondary" type="radio"
+                                            name="colorRadio" id="colorRadio3"
+                                            value="black" />
+                                        <label class="btn bg-dark text-white
+                                            btn-rounded p-3 lb"
+                                            for="colorRadio3"></label>
+                                    </div>
+
+                                    <div class="form-check form-check-inline m-0
+                                        p-0 pr-3">
+                                        <input class="btn-check border
+                                            border-secondary" type="radio"
+                                            name="colorRadio" id="colorRadio5"
+                                            value="blue" />
+                                        <label class="btn bg-primary btn-rounded
+                                            p-3 lb" for="colorRadio5"></label>
+                                    </div>
+
+                                    <div class="form-check form-check-inline
+                                        mt-3 mr-0 p-0 pr-3">
+                                        <input class="btn-check border"
+                                            type="radio" name="colorRadio"
+                                            id="colorRadio9"
+                                            value="red" />
+                                        <label class="btn bg-danger btn-rounded
+                                            p-3 lb" for="colorRadio9"></label>
+                                    </div>
+
+
+                                </section>
+                                <!-- Section: State of use -->
+                                <section class="mb-4">
+                                    <h6 class="font-weight-bold mb-3">TÌNH TRẠNG
+                                        SỬ DỤNG</h6>
+                                    <div class="form-check form-check-inline
+                                        mb-3">
+                                        <input class="form-check-input"
+                                            type="radio" name="flexRadioDefault"
+                                            id="use-radio" />
+                                        <label class="form-check-label
+                                            text-uppercase small text-muted"
+                                            for="use-radio">
+                                            LIKE NEW
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check form-check-inline
+                                        mb-3">
+                                        <input class="form-check-input"
+                                            type="radio" name="flexRadioDefault"
+                                            id="use-radio2" />
+                                        <label class="form-check-label
+                                            text-uppercase small text-muted"
+                                            for="use-radio2">
+                                            ĐÃ QUA BẢO HÀNH
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check form-check-inline
+                                        mb-3">
+                                        <input class="form-check-input"
+                                            type="radio" name="flexRadioDefault"
+                                            id="use-radio3" />
+                                        <label class="form-check-label
+                                            text-uppercase small text-muted"
+                                            for="use-radio3">
+                                            ĐÃ THAY ĐỔI LINH KIỆN
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check form-check-inline
+                                        mb-3">
+                                        <input class="form-check-input"
+                                            type="radio" name="flexRadioDefault"
+                                            id="use-radio4" />
+                                        <label class="form-check-label
+                                            text-uppercase small text-muted"
+                                            for="use-radio4">
+                                            TRẦY XƯỚC
+                                        </label>
+                                    </div>
+
+                                </section>
+                            </section>
+                            <!-- Section: Filters -->
+                        </section>
+                        <!-- Section: Sidebar -->
+                        <div class="container card bg-secondary">
+                            <h5 class="fw-bold text-center text-light mt-3 mb-3
+                                ">THAM KHẢO GIÁ TỪ NHỮNG NGƯỜI BÁN LẺ KHẮP
+                                NƠI TRÊN THẾ GIỚI</h5>
+                        </div>
+                        <div class="row mt-3" id="card"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="container mt-3" id="danhgia">
+                <div class="row">
+                    <div class="col-12 col-sm-6">
+                        <div class="shadow ">
+                            <p class="text font-weight-bold fs-4 mt-2 ps-2
+                                text-secondary">ĐÁNH GIÁ IPHONE 14</p>
+
+                            <div class="ranking-count ps-3">
+                                <div class="ratings">
+                                    <span class="text fs-4 font-weight-bold
+                                        text-warning">
+                                        5
+                                        <i class="fas fa-star star-icon rating"></i>
+                                        <i class="fas fa-star star-icon rating"></i>
+                                        <i class="fas fa-star star-icon rating"></i>
+                                        <i class="fas fa-star star-icon rating"></i>
+                                        <i class="fas fa-star star-icon rating"></i>
+                                    </span>
+
+                                    <span class="comment-count">2 đánh giá</span>
+                                </div>
+                            </div>
+
+                            <div class="ranking ml-5 ps-3 shadow p-3 bg-body
+                                rounded">
+                                <ul class="list-inline">
+                                    <li>
+                                        <div class="number-star">
+                                            5
+                                            <i class="fas fa-star star-icon"></i>
+                                        </div>
+                                        <div class="percent-line">
+                                            <p class="timing"
+                                                style="width:100%"></p>
+                                        </div>
+                                        <a
+                                            href="/dtdd/iphone-14/danh-gia?s=5&amp;p=1"
+                                            class="text text-decoration-none">100%</a>
+                                    </li>
+                                    <li>
+                                        <div class="number-star">
+                                            4
+                                            <i class="fas fa-star star-icon "></i>
+                                        </div>
+                                        <div class="percent-line">
+                                            <p class="timing" style="width:0%"></p>
+                                        </div>
+                                        <a
+                                            href="/dtdd/iphone-14/danh-gia?s=5&amp;p=1"
+                                            class="text text-decoration-none">0%</a>
+                                    </li>
+                                    <li>
+                                        <div class="number-star">
+                                            3
+                                            <i class="fas fa-star star-icon "></i>
+                                        </div>
+                                        <div class="percent-line">
+                                            <p class="timing" style="width:0%"></p>
+                                        </div>
+                                        <a
+                                            href="/dtdd/iphone-14/danh-gia?s=5&amp;p=1"
+                                            class="text text-decoration-none">0%</a>
+                                    </li>
+                                    <li>
+                                        <div class="number-star">
+                                            2
+                                            <i class="fas fa-star star-icon "></i>
+                                        </div>
+                                        <div class="percent-line">
+                                            <p class="timing" style="width:0%"></p>
+                                        </div>
+                                        <a
+                                            href="/dtdd/iphone-14/danh-gia?s=5&amp;p=1"
+                                            class="text text-decoration-none">0%</a>
+                                    </li>
+                                    <li>
+                                        <div class="number-star">
+                                            1
+                                            <i class="fas fa-star star-icon "></i>
+                                        </div>
+                                        <div class="percent-line">
+                                            <p class="timing" style="width:0%"></p>
+                                        </div>
+                                        <a
+                                            href="/dtdd/iphone-14/danh-gia?s=5&amp;p=1"
+                                            class="text text-decoration-none">0%</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                            <div class="bought">
+
+                                <div class="comment_item ps-3 shadow p-3 bg-body
+                                    rounded">
+                                    <div class="item-top">
+                                        <p class="text-name">HẢO</p>
+                                        <p class="tickbuy">
+                                            <i class="fa-solid fa-check"></i>
+                                            Đã mua tại nhà bán lẻ NGUYỄN PHAN
+                                            HỒNG HẢO
+                                        </p>
+                                    </div>
+                                    <div class="item--rate"
+                                        style="margin-top:-20px;">
+                                        <div class="comment-star">
+                                            <i class="fa-solid fa-star rating"></i>
+                                            <i class="fa-solid fa-star rating"></i>
+                                            <i class="fa-solid fa-star rating"></i>
+                                            <i class="fa-solid fa-star rating"></i>
+                                            <i class="fa-solid fa-star rating"></i>
+                                        </div>
+                                    </div>
+                                    <div class="comment-content">
+                                        <div class="cmt-text fw-bold
+                                            align-content-center">Sản phẩm rất
+                                            tốt, Dung lượng
+                                            nhiều sài thoải mái. Sẽ giới
+                                            thiệu cho người thân nhà bán lẻ này</div>
+                                    </div>
+                                    <div class="item-click">
+                                        <a href="#" class="click-like
+                                            text-decoration-none">
+                                            <i class="fa-solid fa-thumbs-up"></i>
+                                            Hữu ích
+                                        </a>
+                                        <a href="#" class="click-cmt
+                                            text-decoration-none">
+                                            <i class="fa-solid fa-comment"></i>
+                                            Thảo luận
+                                        </a>
+                                        <a href="#" class="click-use
+                                            text-decoration-none">Đã dùng trong
+                                            khoảng 1 tháng<i
+                                                class="fa-solid
+                                                fa-circle-question"></i></a>
+                                    </div>
+                                </div>
+                                <div class="comment_item mt-3 ps-3 shadow p-3
+                                    bg-body rounded">
+                                    <div class="item-top">
+                                        <p class="text-name">TẤN TÀI</p>
+                                        <p class="tickbuy">
+                                            <i class="fa-solid fa-check"></i>
+                                            Đã mua tại nhà bán lẻ NGUYỄN VIẾT
+                                            THANH
+                                        </p>
+                                    </div>
+                                    <div class="item--rate"
+                                        style="margin-top:-20px;">
+                                        <div class="comment-star">
+                                            <i class="fa-solid fa-star rating"></i>
+                                            <i class="fa-solid fa-star rating"></i>
+                                            <i class="fa-solid fa-star rating"></i>
+                                            <i class="fa-solid fa-star rating"></i>
+                                            <i class="fa-solid fa-star rating"></i>
+                                        </div>
+                                    </div>
+                                    <div class="comment-content">
+                                        <div class="cmt-text fw-bold
+                                            align-content-center">Sản phẩm đúng
+                                            mô tả. Rất tốt
+                                        </div>
+                                    </div>
+                                    <div class="item-click">
+                                        <a href="#" class="click-like
+                                            text-decoration-none">
+                                            <i class="fa-solid fa-thumbs-up"></i>
+                                            Hữu ích
+                                        </a>
+                                        <a href="#" class="click-cmt
+                                            text-decoration-none">
+                                            <i class="fa-solid fa-comment"></i>
+                                            Thảo luận
+                                        </a>
+                                        <a href="#" class="click-use
+                                            text-decoration-none">Đã dùng trong
+                                            khoảng 2 tháng<i
+                                                class="fa-solid
+                                                fa-circle-question"></i></a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="comment-btn gap-2 mt-3 center-block
+                                col-6 mx-auto">
+                                <button class="btn btn-primary" type="button">Gửi
+                                    đánh giá</button>
+                                <button class="btn btn-primary" type="button">Xem
+                                    đánh giá</button>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+            <img src="asset/img/top/134914.png" class="chat-img" alt="">
+        </main>
+        <footer class="footer container-fluid mt-36 shadow-lg text-dark">
+            <div class="container">
+                <div class="row footer-row">
+                    <div class="col footer-col mt-36">
+                        <h6 class="footer-heading text-uppercase text-dark
+                            mb-3">Chăm sóc khách hàng</h6>
+                        <ul class="footer-list list-unstyled">
+                            <li class="footer-item mb-2">
+                                <a href="#" class="footer-item_link
+                                    text-decoration-none text-dark small">Trung
+                                    tâm trợ
+                                    giúp</a>
+                            </li>
+                            <li class="footer-item mb-2">
+                                <a href="#" class="footer-item_link
+                                    text-decoration-none text-dark small">Hướng
+                                    dẫn mua
+                                    hàng</a>
+                            </li>
+                            <li class="footer-item mb-2">
+                                <a href="#" class="footer-item_link
+                                    text-decoration-none text-dark small">Chính
+                                    sách
+                                    đổi trả</a>
+                            </li>
+                            <li class="footer-item mb-2">
+                                <a href="#" class="footer-item_link
+                                    text-decoration-none text-dark small">Dịch
+                                    vụ bảo
+                                    hành</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col footer-col mt-36">
+                        <h6 class="footer-heading text-uppercase text-dark
+                            mb-3">Tìm kiếm cửa hàng</h6>
+                        <ul class="footer-list list-unstyled">
+                            <li class="footer-item mb-2">
+                                <a href="#" class="footer-item_link
+                                    text-decoration-none text-dark small">Cửa
+                                    hàng gần
+                                    nhất</a>
+                            </li>
+                            <li class="footer-item mb-2">
+                                <a href="#" class="footer-item_link
+                                    text-decoration-none text-dark small">Mua
+                                    hàng từ
+                                    xa</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col footer-col mt-36">
+                        <h6 class="footer-heading text-uppercase text-dark
+                            mb-3">Tìm kiếm nhiều nhất</h6>
+                        <ul class="footer-list list-unstyled">
+                            <li class="footer-item mb-2">
+                                <a href="#" class="footer-item_link
+                                    text-decoration-none text-dark small">iPhone
+                                    11 đã
+                                    qua sử dụng</a>
+                            </li>
+                            <li class="footer-item mb-2">
+                                <a href="#" class="footer-item_link
+                                    text-decoration-none text-dark small">iPhone
+                                    12 đã
+                                    qua sử dụng</a>
+                            </li>
+                            <li class="footer-item mb-2">
+                                <a href="#" class="footer-item_link
+                                    text-decoration-none text-dark small">iPhone
+                                    13 đã
+                                    qua sử dụng</a>
+                            </li>
+                            <li class="footer-item mb-2">
+                                <a href="#" class="footer-item_link
+                                    text-decoration-none text-dark small">iPhone
+                                    14 đã
+                                    qua sử dụng</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col footer-col mt-36">
+                        <h6 class="footer-heading text-uppercase text-dark
+                            mb-3">Theo dõi chúng tôi</h6>
+                        <ul class="footer-list list-unstyled">
+                            <li class="footer-item mb-2">
+                                <a href="#" class="footer-item_link
+                                    text-decoration-none text-dark small">
+                                    <i class="fab fa-facebook"></i>
+                                    <span class="mx-1">Facebook</span>
+                                </a>
+                            </li>
+                            <li class="footer-item mb-2">
+                                <a href="#" class="footer-item_link
+                                    text-decoration-none text-dark small">
+                                    <i class="fab fa-instagram"></i>
+                                    <span class="mx-1">Instagram</span>
+                                </a>
+                            </li>
+                            <li class="footer-item mb-2">
+                                <a href="#" class="footer-item_link
+                                    text-decoration-none text-dark small">
+                                    <i class="fab fa-twitter"></i>
+                                    <span class="mx-1">Twitter</span>
+                                </a>
+                            </li>
+                            <li class="footer-item mb-2">
+                                <a href="#" class="footer-item_link
+                                    text-decoration-none text-dark small">
+                                    <i class="fab fa-linkedin"></i>
+                                    <span class="mx-1">Linkedin</span>
+                                </a>
+                            </li>
+                            <li class="footer-item mb-2">
+                                <a href="#" class="footer-item_link
+                                    text-decoration-none text-dark small">
+                                    <i class="fab fa-tiktok"></i>
+                                    <span class="mx-1">Tiktok</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col footer-col mt-36">
+                        <h6 class="footer-heading text-uppercase text-dark
+                            mb-3">Phương thức thanh toán</h6>
+                        <ul class="footer-list list-unstyled d-flex flex-wrap">
+                            <li class="footer-item mb-2 d-inline-block">
+                                <a href="#" class="footer-item_link
+                                    text-decoration-none text-dark small">
+                                    <img class="mx-1"
+                                        src="asset/img/payment/alepay-logo.png"
+                                        alt="AlaPay logo">
+                                </a>
+                            </li>
+                            <li class="footer-item mb-2">
+                                <a href="#" class="footer-item_link
+                                    text-decoration-none text-dark small">
+                                    <img class="mx-1"
+                                        src="asset/img/payment/moca-logo.png"
+                                        alt="Moca logo">
+                                </a>
+                            </li>
+                            <li class="footer-item mb-2">
+                                <a href="#" class="footer-item_link
+                                    text-decoration-none text-dark small">
+                                    <img class="mx-1"
+                                        src="asset/img/payment/onepay-logo.png"
+                                        alt="OnePay logo">
+                                </a>
+                            </li>
+                            <li class="footer-item mb-2">
+                                <a href="#" class="footer-item_link
+                                    text-decoration-none text-dark small">
+                                    <img class="mx-1"
+                                        src="asset/img/payment/vnpay-logo.png"
+                                        alt="VNPay logo">
+                                </a>
+                            </li>
+                            <li class="footer-item mb-2">
+                                <a href="#" class="footer-item_link
+                                    text-decoration-none text-dark small">
+                                    <img class="mx-1"
+                                        src="asset/img/payment/zalopay-logo.png"
+                                        alt="ZaloPay logo">
+                                </a>
+                            </li>
+                            <li class="footer-item mb-2">
+                                <a href="#" class="footer-item_link
+                                    text-decoration-none text-dark small">
+                                    <img class="mx-1"
+                                        src="asset/img/payment/mpos-logo.png"
+                                        alt="MPos logo">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <p class="copyright text-center mb-0 text-dark">© 2022 - Bản
+                        quyền thuộc về CTU
+                        Shop</p>
+                </div>
+            </div>
+
+        </footer>
+        <div class="card chatbox bg-light overflow-hidden">
+            <div class="card-header chabox-header d-flex text-light
+                justify-content-between">
+                <p class="text-center mb-0">Chat với nhân viên tư vấn</p>
+                <i class="fa-solid fa-window-minimize float-end minimize-icon"></i>
+            </div>
+            <div class="card-body chatbox-body">
+                <div class="d-flex align-items-baseline mb-4">
+                    <div class="position-relative user-avatar-container">
+                        <img
+                            src="https://nextbootstrap.netlify.app/assets/images/profiles/1.jpg"
+                            class="img-fluid rounded-circle" alt="">
+                        <span
+                            class="position-absolute bottom-0 start-100
+                            translate-middle p-1 bg-success border border-light
+                            rounded-circle">
+                            <span class="visually-hidden">Active</span>
+                        </span>
+                    </div>
+
+                    <div class="pe-2">
+                        <div class="card d-inline-block p-2 px-3 m-1">Chào bạn,
+                            bạn cần chúng tôi hỗ trợ gì?</div>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-baseline mb-4 text-end
+                    justify-content-end">
+                    <div class="pe-2">
+                        <div>
+                            <div class="card d-inline-block p-2 px-3 m-1
+                                text-start">Tôi cần mua điện thoại cũ</div>
+                        </div>
+                        <div>
+                            <div class="card d-inline-block p-2 px-3 m-1
+                                text-start">Có điện thoại cũ nào OK không bạn
+                                nhỉ?</div>
+                        </div>
+                        <!-- <div class="card d-inline-block p-2 px-3 m-1 text-start">Tôi cần mua điện thoại cũ</div>
+                    <div class="card d-inline-block p-2 px-3 m-1 text-start">Có điện thoại cũ nào OK không bạn nhỉ?</div> -->
+                    </div>
+
+                    <div class="position-relative user-avatar-container">
+                        <img
+                            src="https://nextbootstrap.netlify.app/assets/images/profiles/2.jpg"
+                            class="img-fluid rounded-circle" alt="">
+                        <span
+                            class="position-absolute bottom-0 start-100
+                            translate-middle p-1 bg-success border border-light
+                            rounded-circle">
+                            <span class="visually-hidden">Active</span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-baseline mb-4">
+                    <div class="position-relative user-avatar-container">
+                        <img
+                            src="https://nextbootstrap.netlify.app/assets/images/profiles/1.jpg"
+                            class="img-fluid rounded-circle" alt="">
+                        <span
+                            class="position-absolute bottom-0 start-100
+                            translate-middle p-1 bg-success border border-light
+                            rounded-circle">
+                            <span class="visually-hidden">Active</span>
+                        </span>
+                    </div>
+
+                    <div class="pe-2">
+                        <div class="card d-inline-block p-2 px-3 m-1">Chào bạn,
+                            bạn cần chúng tôi hỗ trợ gì?</div>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-baseline mb-4 text-end
+                    justify-content-end">
+                    <div class="pe-2">
+                        <div class="card d-inline-block p-2 px-3 m-1">Tôi cần
+                            mua điện thoại cũ</div>
+                        <div class="card d-inline-block p-2 px-3 m-1">Có điện
+                            thoại cũ nào OK không bạn nhỉ?</div>
+                    </div>
+
+                    <div class="position-relative user-avatar-container">
+                        <img
+                            src="https://nextbootstrap.netlify.app/assets/images/profiles/2.jpg"
+                            class="img-fluid rounded-circle" alt="">
+                        <span
+                            class="position-absolute bottom-0 start-100
+                            translate-middle p-1 bg-success border border-light
+                            rounded-circle">
+                            <span class="visually-hidden">Active</span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-baseline mb-4">
+                    <div class="position-relative user-avatar-container">
+                        <img
+                            src="https://nextbootstrap.netlify.app/assets/images/profiles/1.jpg"
+                            class="img-fluid rounded-circle" alt="">
+                        <span
+                            class="position-absolute bottom-0 start-100
+                            translate-middle p-1 bg-success border border-light
+                            rounded-circle">
+                            <span class="visually-hidden">Active</span>
+                        </span>
+                    </div>
+
+                    <div class="pe-2">
+                        <div class="card d-inline-block p-2 px-3 m-1">Chào bạn,
+                            bạn cần chúng tôi hỗ trợ gì?</div>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-baseline mb-4 text-end
+                    justify-content-end">
+                    <div class="pe-2">
+                        <div class="card d-inline-block p-2 px-3 m-1">Tôi cần
+                            mua điện thoại cũ</div>
+                        <div class="card d-inline-block p-2 px-3 m-1">Có điện
+                            thoại cũ nào OK không bạn nhỉ?</div>
+                    </div>
+
+                    <div class="position-relative user-avatar-container">
+                        <img
+                            src="https://nextbootstrap.netlify.app/assets/images/profiles/2.jpg"
+                            class="img-fluid rounded-circle" alt="">
+                        <span
+                            class="position-absolute bottom-0 start-100
+                            translate-middle p-1 bg-success border border-light
+                            rounded-circle">
+                            <span class="visually-hidden">Active</span>
+                        </span>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="card-footer p-0 m-0 w-100">
+                <input type="text" class="form-control border-0"
+                    placeholder="Nhập tin nhắn để chat ...">
+            </div>
+        </div>
+
+        <script src="asset/js/detail.js"></script>
+        <!-- <script>
+        $(document).ready(function () {
+            let checkConItem = $('input[type="checkbox"][name="condition"]:checked');
+            var con = document.getElementsByName("condition");
+            con.click(function () {
+                if (chekConItem.length > 0) {
+
+                    checkConItem.each(function () {
+                        fillterarray = galleryarray.filter(function (item) {
+                            if (item.dcr.value.includes("GHTK")) {
+                                console.log("DA CHON GHTK");
+                            }
+                        })
+                    });
+                }
+            });
+        });
+    </script> -->
+    <div id="mydiv" style="display: none;">
+        <div id="empty"></div>
+        <div id="tbl-pro product-items"></div>
+        <div id="right-div"></div>
+        <div id="count-cart"></div>
+    </div>
+        <script>
+        document.getElementById('nav256').addEventListener('click', function () {
+            document.getElementById('section2').style.display = 'block';
+            document.getElementById('section1').style.display = 'none';
+            document.getElementById('section3').style.display = 'none';
+
+        });
+
+        document.getElementById('nav512').addEventListener('click', function () {
+            document.getElementById('section3').style.display = 'block';
+            document.getElementById('section1').style.display = 'none';
+            document.getElementById('section2').style.display = 'none';
+        });
+        document.getElementById('nav128').addEventListener('click', function () {
+            document.getElementById('section1').style.display = 'block';
+            document.getElementById('section2').style.display = 'none';
+            document.getElementById('section3').style.display = 'none';
+        });
+    </script>
+    <script src="asset/js/cart.js"></script>
+    <script src="asset/js/products.js"></script>
+    </body>
+
+</html>

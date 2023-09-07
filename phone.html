@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Điện thoại cũ giá tốt</title>
+    <link rel="stylesheet" href="asset/bootstrap-5.2.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="asset/css/style.css">
+    <link rel="stylesheet" href="asset/css/cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main class="main container mt-108 p-0">
+        <header class="header fixed-top">
+            <nav class="navbar navbar-expand-sm container-fluid shadow" style="background-color: #499cc8;">
+                <div class="container d-inline">
+                    <div class="row justify-content-center align-items-center my-2">
+                        <div class="col-2">
+                            <a href="home.html" class="navbar-brand">
+                                <img class="brand-img w-100" src="asset/img/logo/mobile-logo-png-1355.png" alt="Logo">
+                            </a>
+                        </div>
+
+                        <div class="col-4">
+                            <div class="button-group d-flex justify-content-between">
+                                <div class="col-sm-6 mx-2">
+                                    <button class="btn text-light text-uppercase w-100 font-weight-bold">Mua</button>
+                                </div>
+                                <div class="col-sm-6">
+                                    <a href="add_products.html" class="text-decoration-none">
+                                        <button class="btn text-light text-uppercase w-100 font-weight-bold">
+                                            Bán
+                                        </button>
+                                    </a>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <button class="navbar-toggler float-end" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#mynavbar">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="collapse navbar-collapse" id="mynavbar">
+                            <div class="col-sm-8">
+                                <ul class="navbar-nav me-auto" role="tablist">
+                                    <li class="nav-item">
+                                        <a href="phone.html" class="nav-link text-light active">
+                                            <i class="fas fa-mobile text-light"></i>
+                                            Điện thoại
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a href="laptop.html" class="nav-link text-light">
+                                            <i class="fas fa-laptop text-light"></i>
+                                            Laptop
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a href="" class="nav-link text-light">
+                                            <i class="fas fa-gift text-light"></i>
+                                            Chương trình khuyến mãi
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a href="" class="nav-link text-light">
+                                            <i class="fas fa-question-circle text-light"></i>
+                                            Hỏi đáp
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-4 d-flex justify-content-end">
+                                <!-- Form -->
+                                <form action="product.html" method="get" class="d-flex">
+                                    <input required class="form-control border-radius-only-start search-input" type="search" name="words" placeholder="Tìm kiếm theo tên">
+                                    <button class="btn border-radius-only-end">
+                                        <i class="fas fa-search text-light"></i>
+                                    </button>
+
+                                    
+                                </form>
+                                <button class="btn ml-4 mr-4 user-btn">
+                                    <a href="formlogin.html"><i class="fas fa-user text-light"></i></a>
+                                    <ul class="user-list-login list-group position-absolute text-dark bg-light list-style-type-none">
+                                        <li class="user-item-login--disabled list-group-item user-avatar">
+                                            <img class="user-avatar" src="" alt="" style="width:50px">
+                                        </li>
+                                        <li class="user-item-login list-group-item">
+                                            <a class="text-decoration-none text-dark" href="edit.html">Chỉnh sửa hồ sơ</a>
+                                        </li>
+                                        <li class="user-item-login list-group-item log-out">
+                                            <a class="text-decoration-none text-dark" href="formlogin.html">Đăng xuất</a>
+                                        </li>
+                                    </ul>
+                                </button>
+
+                                <button class="btn cart-btn">
+                                    <a href="cart.html"><i class="fas fa-shopping-cart text-light"></i></a>
+                                    <span id="mini-number" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                    </span>
+                                </button>
+                            </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="container" style="padding-top: 25px;">
+            <div class="row">
+                <div class="col">
+                    <div class="container-fluid p-0 shadow">
+                        <!-- Carousel -->
+                        <div class="row">
+                            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#carouselExampleIndicators"
+                                        data-bs-slide-to="0" class="active" aria-current="true"
+                                        aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#carouselExampleIndicators"
+                                        data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                    <button type="button" data-bs-target="#carouselExampleIndicators"
+                                        data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                    <button type="button" data-bs-target="#carouselExampleIndicators"
+                                        data-bs-slide-to="3" aria-label="Slide 4"></button>
+                                </div>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="asset/img/banner/638028573187525498_F-C1_1200x300.webp"
+                                            class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item ">
+                                        <img src="asset/img/banner/638040713192525532_F-C1_1200x300.webp"
+                                            class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item ">
+                                        <img src="asset/img/banner/638055042028457833_F-C1_1200x300.webp"
+                                            class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item ">
+                                        <img src="asset/img/banner/638058749650579637_F-C1_1200x300.webp"
+                                            class="d-block w-100" alt="...">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button"
+                                    data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button"
+                                    data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row m-1 p-2">
+                    <div class="brand col-4 border rounded-pill text-center bg-white">
+                        <a href=""><img class="w-75 m-1" src="asset/img/header/phone/logo-iphone-220x48.png" alt=""></a>
+                    </div>
+                    <div class="brand col-4 border rounded-pill text-center bg-white">
+                        <a href=""><img class="w-75 m-1" src="asset/img/header/phone/samsungnew-220x48-1.png"
+                                alt=""></a>
+                    </div>
+                    <div class="brand col-4 border rounded-pill text-center bg-white">
+                        <a href=""><img class="w-75 m-1" src="asset/img/header/phone/OPPO42-b_5.jpg " alt=""></a>
+                    </div>
+                    <div class="brand col-4 border rounded-pill text-center bg-white">
+                        <a href=""><img class="w-75 m-1" src="asset/img/header/phone/logo-xiaomi-220x48-5.png"
+                                alt=""></a>
+                    </div>
+                    <div class="brand col-4 border rounded-pill text-center bg-white">
+                        <a href=""><img class="w-75 m-1" src="asset/img/header/phone/vivo-logo-220-220x48-3.png"
+                                alt=""></a>
+                    </div>
+                    <div class="brand col-4 border rounded-pill text-center bg-white">
+                        <a href=""><img class="w-75 m-1" src="asset/img/header/phone/Nokia42-b_21.jpg"
+                                alt=""></a>
+                    </div>
+                </div>
+                <div class="row m-1 p-3 border border-1 bg-white">
+                    <div class="col-sm">
+                        <select class="form-select select-brand text-center bg-light font-weight-bold"
+                            aria-label="Hang">
+                            <option value="">--Hãng--</option>
+                            <option value="1">iPhone</option>
+                            <option value="2">Samsung</option>
+                            <option value="3">Oppo</option>
+                            <option value="4">Vivo</option>
+                            <option value="5">Xiaomi</option>
+                        </select>
+                    </div>
+                    <div class="col-sm">
+                        <select class="form-select select-price text-center bg-light font-weight-bold"
+                            aria-label="Default select example">
+                            <option value="">--Giá--</option>
+                            <option value="1">Từ thấp đến cao</option>
+                            <option value="2">Từ cao đến thấp</option>
+                        </select>
+                    </div>
+                    <div class="col-sm">
+                        <select class="form-select text-center bg-light font-weight-bold"
+                            aria-label="Default select example">
+                            <option selected>--Ram--
+                            <option>
+                            <option value="1">4 GB</option>
+                            <option value="2">6 GB</option>
+                            <option value="3">8 GB</option>
+                            <option value="4">12 GB</option>
+                        </select>
+                    </div>
+                    <div class="col-sm">
+                        <select class="form-select text-center bg-light  font-weight-bold"
+                            aria-label="Default select example">
+                            <option selected>--Dung lượng--</option>
+                            <option value="1">16 GB</option>
+                            <option value="2">32 GB</option>
+                            <option value="3">64 GB</option>
+                            <option value="4">128 GB</option>
+                        </select>
+                    </div>
+                    <div class="col-sm">
+                        <select class="form-select text-center bg-light font-weight-bold"
+                            aria-label="Default select example">
+                            <option selected>--Tính năng đặc biệt--</option>
+                            <option value="1">Kháng nước - Bụi</option>
+                            <option value="2">Hỗ trợ 5 G</option>
+                            <option value="3">Mở khóa gương mặt</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="container">
+            <div class="container-fluid p-0">
+                <div class="row mt-12 flex-wrap items">
+                </div>
+            </div>
+            <img src="asset/img/top/134914.png" class="chat-img" alt="">
+            <div>
+    </main>
+    <footer class="footer container-fluid mt-36 bg-light shadow-lg">
+        <div class="container">
+            <div class="row footer-row">
+                <div class="col footer-col mt-36">
+                    <h6 class="footer-heading text-uppercase text-dark mb-3">Chăm sóc khách hàng</h6>
+                    <ul class="footer-list list-unstyled">
+                        <li class="footer-item mb-2">
+                            <a href="#" class="footer-item_link text-decoration-none text-dark small">Trung tâm trợ
+                                giúp</a>
+                        </li>
+                        <li class="footer-item mb-2">
+                            <a href="#" class="footer-item_link text-decoration-none text-dark small">Hướng dẫn mua
+                                hàng</a>
+                        </li>
+                        <li class="footer-item mb-2">
+                            <a href="#" class="footer-item_link text-decoration-none text-dark small">Chính sách đổi
+                                trả</a>
+                        </li>
+                        <li class="footer-item mb-2">
+                            <a href="#" class="footer-item_link text-decoration-none text-dark small">Dịch vụ bảo
+                                hành</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col footer-col mt-36">
+                    <h6 class="footer-heading text-uppercase text-dark mb-3">Tìm kiếm cửa hàng</h6>
+                    <ul class="footer-list list-unstyled">
+                        <li class="footer-item mb-2">
+                            <a href="#" class="footer-item_link text-decoration-none text-dark small">Cửa hàng gần
+                                nhất</a>
+                        </li>
+                        <li class="footer-item mb-2">
+                            <a href="#" class="footer-item_link text-decoration-none text-dark small">Mua hàng từ xa</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col footer-col mt-36">
+                    <h6 class="footer-heading text-uppercase text-dark mb-3">Tìm kiếm nhiều nhất</h6>
+                    <ul class="footer-list list-unstyled">
+                        <li class="footer-item mb-2">
+                            <a href="#" class="footer-item_link text-decoration-none text-dark small">iPhone 11 đã qua
+                                sử dụng</a>
+                        </li>
+                        <li class="footer-item mb-2">
+                            <a href="#" class="footer-item_link text-decoration-none text-dark small">iPhone 12 đã qua
+                                sử dụng</a>
+                        </li>
+                        <li class="footer-item mb-2">
+                            <a href="#" class="footer-item_link text-decoration-none text-dark small">iPhone 13 đã qua
+                                sử dụng</a>
+                        </li>
+                        <li class="footer-item mb-2">
+                            <a href="#" class="footer-item_link text-decoration-none text-dark small">iPhone 14 đã qua
+                                sử dụng</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col footer-col mt-36">
+                    <h6 class="footer-heading text-uppercase text-dark mb-3">Theo dõi chúng tôi</h6>
+                    <ul class="footer-list list-unstyled">
+                        <li class="footer-item mb-2">
+                            <a href="#" class="footer-item_link text-decoration-none text-dark small">
+                                <i class="fab fa-facebook"></i>
+                                <span class="mx-1">Facebook</span>
+                            </a>
+                        </li>
+                        <li class="footer-item mb-2">
+                            <a href="#" class="footer-item_link text-decoration-none text-dark small">
+                                <i class="fab fa-instagram"></i>
+                                <span class="mx-1">Instagram</span>
+                            </a>
+                        </li>
+                        <li class="footer-item mb-2">
+                            <a href="#" class="footer-item_link text-decoration-none text-dark small">
+                                <i class="fab fa-twitter"></i>
+                                <span class="mx-1">Twitter</span>
+                            </a>
+                        </li>
+                        <li class="footer-item mb-2">
+                            <a href="#" class="footer-item_link text-decoration-none text-dark small">
+                                <i class="fab fa-linkedin"></i>
+                                <span class="mx-1">Linkedin</span>
+                            </a>
+                        </li>
+                        <li class="footer-item mb-2">
+                            <a href="#" class="footer-item_link text-decoration-none text-dark small">
+                                <i class="fab fa-tiktok"></i>
+                                <span class="mx-1">Tiktok</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col footer-col mt-36">
+                    <h6 class="footer-heading text-uppercase text-dark mb-3">Phương thức thanh toán</h6>
+                    <ul class="footer-list list-unstyled d-flex flex-wrap">
+                        <li class="footer-item mb-2 d-inline-block">
+                            <a href="#" class="footer-item_link text-decoration-none text-dark small">
+                                <img class="mx-1" src="asset/img/payment/alepay-logo.png" alt="AlaPay logo">
+                            </a>
+                        </li>
+                        <li class="footer-item mb-2">
+                            <a href="#" class="footer-item_link text-decoration-none text-dark small">
+                                <img class="mx-1" src="asset/img/payment/moca-logo.png" alt="Moca logo">
+                            </a>
+                        </li>
+                        <li class="footer-item mb-2">
+                            <a href="#" class="footer-item_link text-decoration-none text-dark small">
+                                <img class="mx-1" src="asset/img/payment/mpos-logo.png" alt="OnePay logo">
+                            </a>
+                        </li>
+                        <li class="footer-item mb-2">
+                            <a href="#" class="footer-item_link text-decoration-none text-dark small">
+                                <img class="mx-1" src="asset/img/payment/onepay-logo.png" alt="VNPay logo">
+                            </a>
+                        </li>
+                        <li class="footer-item mb-2">
+                            <a href="#" class="footer-item_link text-decoration-none text-dark small">
+                                <img class="mx-1" src="asset/img/payment/onepay-logo.png" alt="ZaloPay logo">
+                            </a>
+                        </li>
+                        <li class="footer-item mb-2">
+                            <a href="#" class="footer-item_link text-decoration-none text-dark small">
+                                <img class="mx-1" src="asset/img/payment/moca-logo.png " alt="MPos logo">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="card chatbox bg-light overflow-hidden">
+        <div class="card-header chabox-header d-flex text-light justify-content-between">
+            <p class="text-center mb-0">Chat với nhân viên tư vấn</p>
+            <i class="fa-solid fa-window-minimize float-end minimize-icon"></i>
+        </div>
+        <div class="card-body chatbox-body">
+            <div class="d-flex align-items-baseline mb-4">
+                <div class="position-relative user-avatar-container">
+                    <img src="https://nextbootstrap.netlify.app/assets/images/profiles/1.jpg"
+                        class="img-fluid rounded-circle" alt="">
+                    <span
+                        class="position-absolute bottom-0 start-100 translate-middle p-1 bg-success border border-light rounded-circle">
+                        <span class="visually-hidden">Active</span>
+                    </span>
+                </div>
+
+                <div class="pe-2">
+                    <div class="card d-inline-block p-2 px-3 m-1">Chào bạn, bạn cần chúng tôi hỗ trợ gì?</div>
+                </div>
+            </div>
+
+            <div class="d-flex align-items-baseline mb-4 text-end justify-content-end">
+                <div class="pe-2">
+                    <div>
+                        <div class="card d-inline-block p-2 px-3 m-1 text-start">Tôi cần mua điện thoại cũ</div>
+                    </div>
+                    <div>
+                        <div class="card d-inline-block p-2 px-3 m-1 text-start">Có điện thoại cũ nào OK không bạn
+                            nhỉ?</div>
+                    </div>
+                    <!-- <div class="card d-inline-block p-2 px-3 m-1 text-start">Tôi cần mua điện thoại cũ</div>
+                    <div class="card d-inline-block p-2 px-3 m-1 text-start">Có điện thoại cũ nào OK không bạn nhỉ?</div> -->
+                </div>
+
+                <div class="position-relative user-avatar-container">
+                    <img src="https://nextbootstrap.netlify.app/assets/images/profiles/2.jpg"
+                        class="img-fluid rounded-circle" alt="">
+                    <span
+                        class="position-absolute bottom-0 start-100 translate-middle p-1 bg-success border border-light rounded-circle">
+                        <span class="visually-hidden">Active</span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="d-flex align-items-baseline mb-4">
+                <div class="position-relative user-avatar-container">
+                    <img src="https://nextbootstrap.netlify.app/assets/images/profiles/1.jpg"
+                        class="img-fluid rounded-circle" alt="">
+                    <span
+                        class="position-absolute bottom-0 start-100 translate-middle p-1 bg-success border border-light rounded-circle">
+                        <span class="visually-hidden">Active</span>
+                    </span>
+                </div>
+
+                <div class="pe-2">
+                    <div class="card d-inline-block p-2 px-3 m-1">Chào bạn, bạn cần chúng tôi hỗ trợ gì?</div>
+                </div>
+            </div>
+
+            <div class="d-flex align-items-baseline mb-4 text-end justify-content-end">
+                <div class="pe-2">
+                    <div class="card d-inline-block p-2 px-3 m-1">Tôi cần mua điện thoại cũ</div>
+                    <div class="card d-inline-block p-2 px-3 m-1">Có điện thoại cũ nào OK không bạn nhỉ?</div>
+                </div>
+
+                <div class="position-relative user-avatar-container">
+                    <img src="https://nextbootstrap.netlify.app/assets/images/profiles/2.jpg"
+                        class="img-fluid rounded-circle" alt="">
+                    <span
+                        class="position-absolute bottom-0 start-100 translate-middle p-1 bg-success border border-light rounded-circle">
+                        <span class="visually-hidden">Active</span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="d-flex align-items-baseline mb-4">
+                <div class="position-relative user-avatar-container">
+                    <img src="https://nextbootstrap.netlify.app/assets/images/profiles/1.jpg"
+                        class="img-fluid rounded-circle" alt="">
+                    <span
+                        class="position-absolute bottom-0 start-100 translate-middle p-1 bg-success border border-light rounded-circle">
+                        <span class="visually-hidden">Active</span>
+                    </span>
+                </div>
+
+                <div class="pe-2">
+                    <div class="card d-inline-block p-2 px-3 m-1">Chào bạn, bạn cần chúng tôi hỗ trợ gì?</div>
+                </div>
+            </div>
+
+            <div class="d-flex align-items-baseline mb-4 text-end justify-content-end">
+                <div class="pe-2">
+                    <div class="card d-inline-block p-2 px-3 m-1">Tôi cần mua điện thoại cũ</div>
+                    <div class="card d-inline-block p-2 px-3 m-1">Có điện thoại cũ nào OK không bạn nhỉ?</div>
+                </div>
+
+                <div class="position-relative user-avatar-container">
+                    <img src="https://nextbootstrap.netlify.app/assets/images/profiles/2.jpg"
+                        class="img-fluid rounded-circle" alt="">
+                    <span
+                        class="position-absolute bottom-0 start-100 translate-middle p-1 bg-success border border-light rounded-circle">
+                        <span class="visually-hidden">Active</span>
+                    </span>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="card-footer p-0 m-0 w-100">
+            <input type="text" class="form-control border-0" placeholder="Nhập tin nhắn để chat ...">
+        </div>
+    </div>
+
+    <div class="container-fluid" style="background-color: #ccc;">
+        <p class="copyright text-center mb-0" style="color: rgb(115, 115, 115);">© 2022 - Bản quyền thuộc về CTU Shop
+        </p>
+    </div>
+
+    <div class="card chatbox bg-light overflow-hidden">
+        <div class="card-header chabox-header d-flex text-light justify-content-between">
+            <p class="text-center mb-0">Chat với nhân viên tư vấn</p>
+            <i class="fa-solid fa-window-minimize float-end minimize-icon"></i>
+        </div>
+        <div class="card-body chatbox-body">
+            <div class="d-flex align-items-baseline mb-4">
+                <div class="position-relative user-avatar-container">
+                    <img src="https://nextbootstrap.netlify.app/assets/images/profiles/1.jpg"
+                        class="img-fluid rounded-circle" alt="">
+                    <span
+                        class="position-absolute bottom-0 start-100 translate-middle p-1 bg-success border border-light rounded-circle">
+                        <span class="visually-hidden">Active</span>
+                    </span>
+                </div>
+
+                <div class="pe-2">
+                    <div class="card d-inline-block p-2 px-3 m-1">Chào bạn, bạn cần chúng tôi hỗ trợ gì?</div>
+                </div>
+            </div>
+
+            <div class="d-flex align-items-baseline mb-4 text-end justify-content-end">
+                <div class="pe-2">
+                    <div>
+                        <div class="card d-inline-block p-2 px-3 m-1 text-start">Tôi cần mua điện thoại cũ</div>
+                    </div>
+                    <div>
+                        <div class="card d-inline-block p-2 px-3 m-1 text-start">Có điện thoại cũ nào OK không bạn
+                            nhỉ?</div>
+                    </div>
+                    <!-- <div class="card d-inline-block p-2 px-3 m-1 text-start">Tôi cần mua điện thoại cũ</div>
+                    <div class="card d-inline-block p-2 px-3 m-1 text-start">Có điện thoại cũ nào OK không bạn nhỉ?</div> -->
+                </div>
+
+                <div class="position-relative user-avatar-container">
+                    <img src="https://nextbootstrap.netlify.app/assets/images/profiles/2.jpg"
+                        class="img-fluid rounded-circle" alt="">
+                    <span
+                        class="position-absolute bottom-0 start-100 translate-middle p-1 bg-success border border-light rounded-circle">
+                        <span class="visually-hidden">Active</span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="d-flex align-items-baseline mb-4">
+                <div class="position-relative user-avatar-container">
+                    <img src="https://nextbootstrap.netlify.app/assets/images/profiles/1.jpg"
+                        class="img-fluid rounded-circle" alt="">
+                    <span
+                        class="position-absolute bottom-0 start-100 translate-middle p-1 bg-success border border-light rounded-circle">
+                        <span class="visually-hidden">Active</span>
+                    </span>
+                </div>
+
+                <div class="pe-2">
+                    <div class="card d-inline-block p-2 px-3 m-1">Chào bạn, bạn cần chúng tôi hỗ trợ gì?</div>
+                </div>
+            </div>
+
+            <div class="d-flex align-items-baseline mb-4 text-end justify-content-end">
+                <div class="pe-2">
+                    <div class="card d-inline-block p-2 px-3 m-1">Tôi cần mua điện thoại cũ</div>
+                    <div class="card d-inline-block p-2 px-3 m-1">Có điện thoại cũ nào OK không bạn nhỉ?</div>
+                </div>
+
+                <div class="position-relative user-avatar-container">
+                    <img src="https://nextbootstrap.netlify.app/assets/images/profiles/2.jpg"
+                        class="img-fluid rounded-circle" alt="">
+                    <span
+                        class="position-absolute bottom-0 start-100 translate-middle p-1 bg-success border border-light rounded-circle">
+                        <span class="visually-hidden">Active</span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="d-flex align-items-baseline mb-4">
+                <div class="position-relative user-avatar-container">
+                    <img src="https://nextbootstrap.netlify.app/assets/images/profiles/1.jpg"
+                        class="img-fluid rounded-circle" alt="">
+                    <span
+                        class="position-absolute bottom-0 start-100 translate-middle p-1 bg-success border border-light rounded-circle">
+                        <span class="visually-hidden">Active</span>
+                    </span>
+                </div>
+
+                <div class="pe-2">
+                    <div class="card d-inline-block p-2 px-3 m-1">Chào bạn, bạn cần chúng tôi hỗ trợ gì?</div>
+                </div>
+            </div>
+
+            <div class="d-flex align-items-baseline mb-4 text-end justify-content-end">
+                <div class="pe-2">
+                    <div class="card d-inline-block p-2 px-3 m-1">Tôi cần mua điện thoại cũ</div>
+                    <div class="card d-inline-block p-2 px-3 m-1">Có điện thoại cũ nào OK không bạn nhỉ?</div>
+                </div>
+
+                <div class="position-relative user-avatar-container">
+                    <img src="https://nextbootstrap.netlify.app/assets/images/profiles/2.jpg"
+                        class="img-fluid rounded-circle" alt="">
+                    <span
+                        class="position-absolute bottom-0 start-100 translate-middle p-1 bg-success border border-light rounded-circle">
+                        <span class="visually-hidden">Active</span>
+                    </span>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="card-footer p-0 m-0 w-100">
+            <input type="text" class="form-control border-0" placeholder="Nhập tin nhắn để chat ...">
+        </div>
+    </div>
+    <div id="mydiv" style="display: none;">
+        <div id="empty"></div>
+        <div id="tbl-pro product-items"></div>
+        <div id="right-div"></div>
+        <div id="count-cart"></div>
+    </div>
+    <script src="asset/bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="asset/js/phone.js"></script>
+    <script src="asset/js/cart.js"> </script>
+    <script src="asset/js/products.js"></script>
+
+</body>
+
+</html>

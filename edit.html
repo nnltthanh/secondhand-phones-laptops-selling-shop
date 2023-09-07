@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,
+            initial-scale=1.0">
+        <title>Hồ sơ của tôi</title>
+        <link rel="stylesheet" href="asset/css/style.css">
+        <link rel="stylesheet" href="asset/css/login.css">
+        <link rel="stylesheet" href="asset/css/cart.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+            rel="stylesheet">
+        <link
+            href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+            rel="stylesheet">
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+            integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+        <style>
+            .img-profile-2 {
+                width: 120px;
+                height: 120px;
+                margin-bottom: 15px
+            }
+
+
+            #btnDrop:hover .test{
+                display: block;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="app">
+            <header class="header fixed-top">
+                <nav class="navbar navbar-expand-sm container-fluid shadow">
+                    <div class="container d-inline">
+                        <div class="row justify-content-center
+                            align-items-center my-2">
+                            <div class="col-2">
+                                <a href="home.html" class="navbar-brand">
+                                    <img class="brand-img w-100"
+                                        src="asset/img/logo/mobile-logo-png-1355.png"
+                                        alt="Logo">
+                                </a>
+                            </div>
+
+                            <div class="col-4">
+                                <div class="button-group d-flex
+                                    justify-content-between">
+                                    <div class="col-sm-6 mx-2">
+                                        <button class="btn text-light btn-prim
+                                            text-uppercase w-100
+                                            font-weight-bold">Mua</button>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <a href="add_products.html"
+                                            class="text-decoration-none">
+                                            <button class="btn text-light btn-prim
+                                                text-uppercase w-100
+                                                font-weight-bold">
+                                                Bán
+                                            </button>
+                                        </a>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-6">
+                                <button class="navbar-toggler float-end"
+                                    type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#mynavbar">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="collapse navbar-collapse" id="mynavbar">
+                                <div class="col-md-8">
+                                    <ul class="navbar-nav me-auto"
+                                        role="tablist">
+                                        <li class="nav-item">
+                                            <a href="phone.html" class="nav-link
+                                                text-light active">
+                                                <i class="fas fa-mobile
+                                                    text-light"></i>
+                                                Điện thoại
+                                            </a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a href="laptop.html"
+                                                class="nav-link text-light">
+                                                <i class="fas fa-laptop
+                                                    text-light"></i>
+                                                Laptop
+                                            </a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a href="" class="nav-link
+                                                text-light">
+                                                <i class="fas fa-gift
+                                                    text-light"></i>
+                                                Chương trình khuyến mãi
+                                            </a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a href="" class="nav-link
+                                                text-light">
+                                                <i class="fas fa-question-circle
+                                                    text-light"></i>
+                                                Hỏi đáp
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4 d-flex
+                                    justify-content-end">
+                                    <!-- Form -->
+                                    <form action="product.html" method="get"
+                                        class="d-flex">
+                                        <input required class="form-control
+                                            border-radius-only-start"
+                                            type="search" name="words"
+                                            placeholder="Tìm kiếm theo tên">
+                                        <button class="btn btn-prim
+                                            border-radius-only-end">
+                                            <i class="fas fa-search text-light"></i>
+                                        </button>
+
+
+                                    </form>
+                                    <button class="btn btn-prim ml-4 mr-4 user-btn">
+                                        <a href="formlogin.html"><i class="fas
+                                                fa-user text-light"></i></a>
+                                       
+                                    </button>
+
+                                    <button class="btn cart-btn">
+                                        <a href="cart.html"><i class="fas fa-shopping-cart text-light"></i></a>
+                                        <span id="mini-number" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <main class="main container mt-130 p-0">
+                <div class="container mt-3">
+                    <div class="view-account">
+                        <section class="module">
+                            <div class="module-inner">
+                                <div class="side-bar">
+                                    <div class="user-info">
+                                        <img class="img-profile
+                                            img-circle img-responsive
+                                            center-block
+                                            "
+                                            src="asset/img/login_register/avt_user.webp"
+                                            alt=""
+                                            style="margin-top:70px;
+                                            cursor: pointer;"
+                                            id="imgProfile">
+                                        <ul class="meta list
+                                            list-unstyled">
+                                            <li class="name">Phuong Thao
+                                                <label class="label
+                                                    label-info">Hạng
+                                                    thành viên</label>
+                                            </li>
+                                            <li class="email"><a
+                                                    style="font-size:13px;"
+                                                    class="text-center"
+                                                    href=""
+                                                    id="profie-email"
+                                                    href="#" value="">thaob02@gmail.com</a></li>
+                                            <li class="activity">Lần
+                                                truy cập
+                                                cuối: Hôm nay lúc 20h15</li>
+                                        </ul>
+                                    </div>
+                                    <nav class="side-menu">
+                                        <ul class="nav">
+                                            <li class="active"><a
+                                                    href="#"><span
+                                                        class="fa
+                                                        fa-user"></span>
+                                                    Hồ Sơ</a></li>
+                                            <li><a href="#"><span
+                                                        class="fa
+                                                        fa-credit-card"></span>
+                                                    Đơn mua</a></li>
+                                            <li><a href="#"><span
+                                                        class="fa
+                                                        fa-envelope"></span>
+                                                    Thông báo</a></li>
+                                            <li><a href="#"><span
+                                                        class="fa
+                                                        fa-cog"></span>
+                                                    Cài đặt</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <div class="content-panel">
+                                    <h2 class="title" style="display:none;">Hồ Sơ Cá Nhân</h2>
+                                    <form class="form-horizontal">
+                                        <fieldset class="fieldset">
+                                            <h3 class="fieldset-title" style="display:none;">Quản
+                                                lý
+                                                thông tin để bảo mật tài
+                                                khoản</h3>
+                                            <div class="form-group
+                                                avatar">
+                                                <div class="form-inline
+                                                    col-md-10 col-sm-9">
+                                                    <input type="file"
+                                                        class="file-uploader
+                                                        pull-left
+                                                        bg-light"
+                                                        id="fileProfile"
+                                                        onchange="chooseFile(this)"><span
+                                                        class="text-muted">Chọn
+                                                        file để
+                                                        cập nhật ảnh đại
+                                                        diện của bạn</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group
+                                                mt-3">
+                                                <h4 class="text
+                                                    text-muted fs-5">THÔNG
+                                                    TIN CHUNG</h4>
+                                                <label class="col-md-3
+                                                    col-sm-3
+                                                    control-label">Họ
+                                                    tên</label>
+                                                <div class="col-md-10
+                                                    col-sm-9
+                                                    col-xs-12">
+                                                    <input type="text"
+                                                        class="form-control"
+                                                        value=""
+                                                        id="txt_hoten"
+                                                        placeholder=""
+                                                        disabled="true">
+                                                </div>
+                                            </div>
+                                            <div class="form-group
+                                                mt-2">
+                                                <label class="col-md-3
+                                                    col-sm-3
+                                                    control-label">Email</label>
+                                                <div class="col-md-10
+                                                    col-sm-9
+                                                    col-xs-12">
+                                                    <input type="email"
+                                                        id="email"
+                                                        class="form-control"
+                                                        value="thaob02@gmail.com"
+                                                        disabled="true">
+                                                    <div class="ml-3">
+                                                        <p
+                                                            id="invalid-fill-email"
+                                                            class="text
+                                                            text-danger
+                                                            fs-6 ml-5"
+                                                            style="display:none;">Email
+                                                            không hợp
+                                                            lệ!</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group
+                                                mt-2">
+                                                <label class="col-md-3
+                                                    col-sm-3
+                                                    control-label">Số
+                                                    điện thoại</label>
+                                                <div class="col-md-10
+                                                    col-sm-9
+                                                    col-xs-12">
+                                                    <input type="tel"
+                                                        id="sdt"
+                                                        class="form-control"
+                                                        value="0356557230"
+                                                        disabled="true">
+                                                    <p
+                                                        class="help-block"></p>
+                                                    <div class="ml-3">
+                                                        <p
+                                                            id="invalid-fill-sdt"
+                                                            class="text
+                                                            text-danger
+                                                            fs-6 ml-5"
+                                                            style="display:none;">Số
+                                                            điện thoại
+                                                            không hợp
+                                                            lệ!</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group
+                                                mt-2">
+                                                <label class="col-md-3
+                                                    col-sm-3
+                                                    control-label">Giới
+                                                    tính</label>
+                                                <div class="col-md-10
+                                                    col-sm-9"
+                                                    id="div_gender"
+                                                    disabled="true">
+                                                    <input type="radio"
+                                                        id="gd_nam"
+                                                        name="gender"
+                                                        value="nam"
+                                                        disabled="true"
+                                                        class="bg-primary"/><span
+                                                        class="me-2">Nam</span>
+                                                    <input type="radio"
+                                                        id="gd_nu"
+                                                        name="gender"
+                                                        value="nu"
+                                                        disabled="true"
+                                                        /><span
+                                                        class="me-2">Nữ</span>
+                                                    <input type="radio"
+                                                        id="gd_khac"
+                                                        name="gender"
+                                                        value="khac"
+                                                        disabled="true"
+                                                        /><span
+                                                        class="me-2">Khác</span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group
+                                                mt-2">
+                                                <label class="col-md-3
+                                                    col-sm-3
+                                                    control-label">Ngày
+                                                    sinh</label>
+                                                <div class="col-md-10
+                                                    col-sm-9">
+                                                    <input type="date"
+                                                        id="ngaysinh"
+                                                        class="form-control"
+                                                        value=""
+                                                        disabled="true">
+                                                    <p
+                                                        class="help-block"></p>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+
+                                        <fieldset class="fieldset mt-2">
+                                            <h4 class="text
+                                                text-secondary
+                                                text-muted fs-5">BẢO MẬT</h4>
+                                            <div class="form-group">
+                                                <label class="col-md-3
+                                                    col-sm-3
+                                                    control-label">Mật
+                                                    khẩu</label>
+                                                <div class="col-md-10
+                                                    col-sm-9">
+                                                    <input
+                                                        type="password"
+                                                        id="old_pw"
+                                                        class="form-control"
+                                                        value=""
+                                                        placeholder="Mật khẩu cũ nếu bạn muốn thay đổi mật khẩu"
+                                                        disabled="true">
+                                                </div>
+                                                <div class="ml-3">
+                                                    <p
+                                                        id="invalid-fill-pass"
+                                                        class="text
+                                                        text-danger fs-6
+                                                        ml-5"
+                                                        style="display:none;">Mật
+                                                        khẩu cũ không
+                                                        đúng!</p>
+                                                </div>
+                                                <div class="ml-3">
+                                                    <p
+                                                        id="valid-fill-pass"
+                                                        class="text
+                                                        text-success
+                                                        fs-6 ml-5"
+                                                        style="display:none;">Mật
+                                                        khẩu nhập vào
+                                                        trùng khớp mật
+                                                        khẩu cũ!</p>
+                                                </div>
+                                            </div>
+                                            <div class="form-group
+                                                mt-2">
+                                                <label class="col-md-3
+                                                    col-sm-3
+                                                    control-label">Mật
+                                                    khẩu mới</label>
+                                                <div class="col-md-10
+                                                    col-sm-9">
+                                                    <input
+                                                        type="password"
+                                                        id="new_pw"
+                                                        class="form-control"
+                                                        value=""
+                                                        placeholder="Nhập mật khẩu mới"
+                                                        disabled="true">
+                                                </div>
+                                                <div class="ml-3">
+                                                    <p
+                                                        id="invalid-fill-pass-new"
+                                                        class="text
+                                                        text-danger fs-6
+                                                        ml-5"
+                                                        style="display:none;">Mật
+                                                        khẩu yếu hoặc
+                                                        không đúng định
+                                                        dạng:
+                                                        <br>"Mật khẩu
+                                                        gồm chữ Hoa,
+                                                        thường, số, kí
+                                                        tự đặc biệt và
+                                                        trên 8 kí
+                                                        tự"!</p>
+                                                </div>
+                                                <div class="ml-3">
+                                                    <p
+                                                        id="valid-fill-pass-new"
+                                                        class="text
+                                                        text-success
+                                                        fs-6 ml-5"
+                                                        style="display:none;">Mật
+                                                        khẩu mạnh_okei!</p>
+                                                </div>
+                                            </div>
+                                            <div class="form-group
+                                                mt-2">
+                                                <label class="col-md-3
+                                                    col-sm-3
+                                                    control-label">Nhập
+                                                    lại mật
+                                                    khẩu mới</label>
+                                                <div class="col-md-10
+                                                    col-sm-9">
+                                                    <input
+                                                        type="password"
+                                                        id="new_pw1"
+                                                        class="form-control"
+                                                        value=""
+                                                        placeholder="Nhập lại mật khẩu mới"
+                                                        disabled="true">
+                                                </div>
+                                                <div class="ml-3">
+                                                    <p
+                                                        id="invalid-fill-pass-new1"
+                                                        class="text
+                                                        text-danger fs-6
+                                                        ml-5"
+                                                        style="display:none;">Mật
+                                                        khẩu không khớp!</p>
+                                                </div>
+                                                <div class="ml-3">
+                                                    <p
+                                                        id="valid-fill-pass-new1"
+                                                        class="text
+                                                        text-success
+                                                        fs-6 ml-5"
+                                                        style="display:none;">Mật
+                                                        khẩu khớp_okei!</p>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                        <hr>
+                                        <div class="row mt-4">
+                                            <div class="d-grid gap-2
+                                                d-md-block">
+                                                <button class="btn
+                                                    btn-primary"
+                                                    type="button"
+                                                    id="btn_update">Cập
+                                                    nhật thông
+                                                    tin</button>
+                                                <button class="btn
+                                                    btn-primary"
+                                                    type="button"
+                                                    id="btn_save"
+                                                    disabled="true">Lưu
+                                                    thay đổi</button>
+                                                <button class="btn
+                                                    btn-danger btn-red"
+                                                    type="reset"
+                                                    id="btn_reset"
+                                                    disabled="true">Hủy</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+
+                </main>
+
+                <footer class="footer container-fluid mt-36 shadow-lg
+                    text-dark">
+                    <div class="container">
+                        <div class="row footer-row">
+                            <div class="col footer-col mt-36">
+                                <h6 class="footer-heading text-uppercase
+                                    text-dark
+                                    mb-3">Chăm sóc khách hàng</h6>
+                                <ul class="footer-list list-unstyled">
+                                    <li class="footer-item mb-2">
+                                        <a href="#"
+                                            class="footer-item_link
+                                            text-decoration-none
+                                            text-dark small">Trung
+                                            tâm trợ
+                                            giúp</a>
+                                    </li>
+                                    <li class="footer-item mb-2">
+                                        <a href="#"
+                                            class="footer-item_link
+                                            text-decoration-none
+                                            text-dark small">Hướng
+                                            dẫn mua
+                                            hàng</a>
+                                    </li>
+                                    <li class="footer-item mb-2">
+                                        <a href="#"
+                                            class="footer-item_link
+                                            text-decoration-none
+                                            text-dark small">Chính
+                                            sách
+                                            đổi trả</a>
+                                    </li>
+                                    <li class="footer-item mb-2">
+                                        <a href="#"
+                                            class="footer-item_link
+                                            text-decoration-none
+                                            text-dark small">Dịch
+                                            vụ bảo
+                                            hành</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="col footer-col mt-36">
+                                <h6 class="footer-heading text-uppercase
+                                    text-dark
+                                    mb-3">Tìm kiếm cửa hàng</h6>
+                                <ul class="footer-list list-unstyled">
+                                    <li class="footer-item mb-2">
+                                        <a href="#"
+                                            class="footer-item_link
+                                            text-decoration-none
+                                            text-dark small">Cửa
+                                            hàng gần
+                                            nhất</a>
+                                    </li>
+                                    <li class="footer-item mb-2">
+                                        <a href="#"
+                                            class="footer-item_link
+                                            text-decoration-none
+                                            text-dark small">Mua
+                                            hàng từ
+                                            xa</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="col footer-col mt-36">
+                                <h6 class="footer-heading text-uppercase
+                                    text-dark
+                                    mb-3">Tìm kiếm nhiều nhất</h6>
+                                <ul class="footer-list list-unstyled">
+                                    <li class="footer-item mb-2">
+                                        <a href="#"
+                                            class="footer-item_link
+                                            text-decoration-none
+                                            text-dark small">iPhone
+                                            11 đã
+                                            qua sử dụng</a>
+                                    </li>
+                                    <li class="footer-item mb-2">
+                                        <a href="#"
+                                            class="footer-item_link
+                                            text-decoration-none
+                                            text-dark small">iPhone
+                                            12 đã
+                                            qua sử dụng</a>
+                                    </li>
+                                    <li class="footer-item mb-2">
+                                        <a href="#"
+                                            class="footer-item_link
+                                            text-decoration-none
+                                            text-dark small">iPhone
+                                            13 đã
+                                            qua sử dụng</a>
+                                    </li>
+                                    <li class="footer-item mb-2">
+                                        <a href="#"
+                                            class="footer-item_link
+                                            text-decoration-none
+                                            text-dark small">iPhone
+                                            14 đã
+                                            qua sử dụng</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="col footer-col mt-36">
+                                <h6 class="footer-heading text-uppercase
+                                    text-dark
+                                    mb-3">Theo dõi chúng tôi</h6>
+                                <ul class="footer-list list-unstyled">
+                                    <li class="footer-item mb-2">
+                                        <a href="#"
+                                            class="footer-item_link
+                                            text-decoration-none
+                                            text-dark small">
+                                            <i class="fab fa-facebook"></i>
+                                            <span class="mx-1">Facebook</span>
+                                        </a>
+                                    </li>
+                                    <li class="footer-item mb-2">
+                                        <a href="#"
+                                            class="footer-item_link
+                                            text-decoration-none
+                                            text-dark small">
+                                            <i class="fab fa-instagram"></i>
+                                            <span class="mx-1">Instagram</span>
+                                        </a>
+                                    </li>
+                                    <li class="footer-item mb-2">
+                                        <a href="#"
+                                            class="footer-item_link
+                                            text-decoration-none
+                                            text-dark small">
+                                            <i class="fab fa-twitter"></i>
+                                            <span class="mx-1">Twitter</span>
+                                        </a>
+                                    </li>
+                                    <li class="footer-item mb-2">
+                                        <a href="#"
+                                            class="footer-item_link
+                                            text-decoration-none
+                                            text-dark small">
+                                            <i class="fab fa-linkedin"></i>
+                                            <span class="mx-1">Linkedin</span>
+                                        </a>
+                                    </li>
+                                    <li class="footer-item mb-2">
+                                        <a href="#"
+                                            class="footer-item_link
+                                            text-decoration-none
+                                            text-dark small">
+                                            <i class="fab fa-tiktok"></i>
+                                            <span class="mx-1">Tiktok</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="col footer-col mt-36">
+                                <h6 class="footer-heading text-uppercase
+                                    text-dark
+                                    mb-3">Phương thức thanh toán</h6>
+                                <ul class="footer-list list-unstyled
+                                    d-flex
+                                    flex-wrap">
+                                    <li class="footer-item mb-2
+                                        d-inline-block">
+                                        <a href="#"
+                                            class="footer-item_link
+                                            text-decoration-none
+                                            text-dark small">
+                                            <img class="mx-1"
+                                                src="asset/img/payment/alepay-logo.png"
+                                                alt="AlaPay logo">
+                                        </a>
+                                    </li>
+                                    <li class="footer-item mb-2">
+                                        <a href="#"
+                                            class="footer-item_link
+                                            text-decoration-none
+                                            text-dark small">
+                                            <img class="mx-1"
+                                                src="asset/img/payment/moca-logo.png"
+                                                alt="Moca logo">
+                                        </a>
+                                    </li>
+                                    <li class="footer-item mb-2">
+                                        <a href="#"
+                                            class="footer-item_link
+                                            text-decoration-none
+                                            text-dark small">
+                                            <img class="mx-1"
+                                                src="asset/img/payment/onepay-logo.png"
+                                                alt="OnePay logo">
+                                        </a>
+                                    </li>
+                                    <li class="footer-item mb-2">
+                                        <a href="#"
+                                            class="footer-item_link
+                                            text-decoration-none
+                                            text-dark small">
+                                            <img class="mx-1"
+                                                src="asset/img/payment/vnpay-logo.png"
+                                                alt="VNPay logo">
+                                        </a>
+                                    </li>
+                                    <li class="footer-item mb-2">
+                                        <a href="#"
+                                            class="footer-item_link
+                                            text-decoration-none
+                                            text-dark small">
+                                            <img class="mx-1"
+                                                src="asset/img/payment/zalopay-logo.png"
+                                                alt="ZaloPay logo">
+                                        </a>
+                                    </li>
+                                    <li class="footer-item mb-2">
+                                        <a href="#"
+                                            class="footer-item_link
+                                            text-decoration-none
+                                            text-dark small">
+                                            <img class="mx-1"
+                                                src="asset/img/payment/mpos-logo.png"
+                                                alt="MPos logo">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <p class="copyright text-center mb-0
+                                text-dark">© 2022 -
+                                Bản quyền thuộc về CTU
+                                Shop</p>
+                        </div>
+                    </div>
+
+                </footer>
+            </div>
+
+            <script src="asset/js/main.js"></script>
+            <script>
+            //$(document).ready(function () {
+                localStorage.setItem("edit_pass", "Abcd@1234");
+                function chooseFile(fileInput) {
+                    if (fileInput.files && fileInput.files[0]) {
+                        var reader = new FileReader();
+                        reader.onload = function (e) {
+                            $("#imgProfile").attr("src", e.target.result);
+                            $("#imgProfile").addClass("img-profile-2");
+                        }
+                        reader.readAsDataURL(fileInput.files[0]);
+                    }
+                }
+                var old = document.getElementById("old_pw");
+                var newPass = document.getElementById("new_pw");
+                var prenewPass = document.getElementById("new_pw1");
+                var sdt= document.getElementById("sdt");
+                var email= document.getElementById("email");
+                var check = 0;
+                
+    
+                document.getElementById("btn_save").addEventListener("click", function () {
+    
+    
+    
+                    var name = document.getElementById("txt_hoten").value;
+                    var email = document.getElementById("email").value;
+    
+                    $("#profie-email").attr("href", document.getElementById("email").value);
+                    $("#profie-email").text(document.getElementById("email").value);
+                    var sdt = document.getElementById("sdt").value;
+                    var ngaysinh = document.getElementById("ngaysinh").value;
+                    $("#txt_hoten").attr("value", name);
+                    $("#email").attr("value", email);
+                    $("#sdt").attr("value", sdt);
+                    $("#ngaysinh").attr("value", ngaysinh);
+    
+    
+                    if (check == 1) {
+                        alert("DONE513 " + prenewPass.value);
+                        var result= $("#new_pw1").val();
+                        
+                        $("#old_pw").attr("value", result);
+                        alert("OLDPASS "+ $("#old_pw").attr("value"));
+    
+                        localStorage.setItem("edit_pass", $("#old_pw").attr("value"));
+    
+                       
+                        $("#new_pw").attr('placeholder', 'Nhập lại mật khẩu mới');
+                        $("#new_pw1").attr("placeholder", "Nhập lại mật khẩu mới");
+    
+    
+    
+                    } else if (check == 0) {
+    
+    
+                    } else {
+                        alert("Bạn phải hoàn thành đầy đủ yêu cầu!");
+                        return false;
+                    }
+    
+    
+                    document.getElementById("txt_hoten").disabled = true;
+                    document.getElementById("email").disabled = true;
+                    document.getElementById("sdt").disabled = true;
+                    document.getElementById("div_gender").disabled = true;
+                    document.getElementById("gd_nam").disabled = true;
+                    document.getElementById("gd_nu").disabled = true;
+                    document.getElementById("gd_khac").disabled = true;
+                    document.getElementById("ngaysinh").disabled = true;
+                    document.getElementById("old_pw").disabled = true;
+                    document.getElementById("new_pw").disabled = true;
+                    document.getElementById("new_pw1").disabled = true;
+    
+    
+                    document.getElementById("btn_save").disabled = true;
+                    document.getElementById("btn_reset").disabled = true;
+    
+                    document.getElementById("valid-fill-pass").style.display = 'none';
+                    document.getElementById("valid-fill-pass-new").style.display = 'none';
+                    document.getElementById("valid-fill-pass-new1").style.display = 'none';
+    
+                    // $("#new_pw").attr({ value: "", placeholder: "Please enter a value" });
+    
+    
+                    alert("Bạn đã cập nhật thông tin thành công");
+                    return true;
+                });
+    
+                old.addEventListener("input", function () {
+    
+                    if ((old.value.length === 0)) {
+                        document.getElementById("invalid-fill-pass").style.display = 'none';
+                        document.getElementById("valid-fill-pass").style.display = 'none';
+                        document.getElementById("new_pw").disabled = true;
+                        document.getElementById("new_pw1").disabled = true;
+                        check = 0;
+                    } else {
+                        if (((old.value) == localStorage.getItem("edit_pass"))) {
+                            document.getElementById("valid-fill-pass").style.display = 'block';
+                            document.getElementById("invalid-fill-pass").style.display = 'none';
+    
+                            document.getElementById("new_pw").disabled = false;
+    
+    
+    
+                        } else {
+                            document.getElementById("invalid-fill-pass").style.display = 'block';
+                            document.getElementById("new_pw").disabled = true;
+                            document.getElementById("new_pw1").disabled = true;
+                            check = -1;
+    
+                        }
+                    }
+    
+                });
+                //Biểu thức chính quy của mật khẩu
+                var strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
+    
+                newPass.addEventListener("input", function () {
+                    if ((newPass.value.length === 0)) {
+                        document.getElementById("invalid-fill-pass-new").style.display = 'none';
+                        document.getElementById("valid-fill-pass-new").style.display = 'none';
+                        document.getElementById("new_pw1").disabled = true;
+                    } else {
+                        if (strongRegex.test(newPass.value)) {
+                            document.getElementById("valid-fill-pass-new").style.display = 'block';
+                            document.getElementById("invalid-fill-pass-new").style.display = 'none';
+    
+                            document.getElementById("new_pw1").disabled = false;
+    
+    
+                        } else {
+                            document.getElementById("invalid-fill-pass-new").style.display = 'block';
+                            document.getElementById("valid-fill-pass-new").style.display = 'none';
+                            document.getElementById("new_pw1").disabled = true;
+    
+                        }
+                    }
+                })
+    
+                prenewPass.addEventListener("input", function () {
+                    if ((prenewPass.value.length === 0)) {
+                        document.getElementById("invalid-fill-pass-new1").style.display = 'none';
+                        document.getElementById("valid-fill-pass-new1").style.display = 'none';
+                    } else {
+                        if (prenewPass.value == newPass.value) {
+                            document.getElementById("valid-fill-pass-new1").style.display = 'block';
+                            document.getElementById("invalid-fill-pass-new1").style.display = 'none';
+    
+                            check = 1;
+    
+                        } else {
+                            document.getElementById("invalid-fill-pass-new1").style.display = 'block';
+                            document.getElementById("valid-fill-pass-new1").style.display = 'none';
+                            check = -1;
+                        }
+                    }
+                })
+    
+                document.getElementById("btn_reset").addEventListener("click", function () {
+                    document.getElementById("valid-fill-pass").style.display = 'none';
+                    document.getElementById("valid-fill-pass-new").style.display = 'none';
+                    document.getElementById("valid-fill-pass-new1").style.display = 'none';
+                    document.getElementById("invalid-fill-pass").style.display = 'none';
+                    document.getElementById("invalid-fill-pass-new").style.display = 'none';
+                    document.getElementById("invalid-fill-pass-new1").style.display = 'none';
+                    check = 0;
+                })
+    
+    
+    
+    
+    
+                document.getElementById("btn_update").addEventListener("click", function () {
+                    document.getElementById("txt_hoten").disabled = false;
+                    document.getElementById("email").disabled = false;
+                    document.getElementById("sdt").disabled = false;
+                    document.getElementById("div_gender").disabled = false;
+                    document.getElementById("gd_nam").disabled = false;
+                    document.getElementById("gd_nu").disabled = false;
+                    document.getElementById("gd_khac").disabled = false;
+                    document.getElementById("ngaysinh").disabled = false;
+                    document.getElementById("old_pw").disabled = false;
+    
+    
+                    document.getElementById("btn_save").disabled = false;
+                    document.getElementById("btn_reset").disabled = false;
+    
+                })
+            //});
+    
+            ///XÁC MINH EMAIL VÀ SỐ ĐIỆN THOẠI
+    
+    
+            var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            var reg_sdt =
+                /((096|097|098|032|033|034|035|036|037|038|039|086|091|094|083|084|085|081|082|088|090|093|070|079|076|077|078|089)+([0-9]{7}))/;
+    
+            email.addEventListener("input", function (){
+                if(filter.test(email.value) || email.value.length===0){
+                    
+                    document.getElementById("invalid-fill-email").style.display='none';
+                }else{
+                    document.getElementById("invalid-fill-email").style.display='block';
+                }
+            });
+    
+            document.getElementById("sdt").addEventListener("input", function (){
+                
+                if(reg_sdt.test(sdt.value) || sdt.value.length===0){
+                    
+                    document.getElementById("invalid-fill-sdt").style.display='none';
+                }else{
+                    document.getElementById("invalid-fill-sdt").style.display='block';
+                }
+            });
+    
+            var gioitinh= document.getElementById("div_gender");
+    
+            gioitinh.addEventListener("change",function(){
+                if(gioitinh.value=="nam"){
+                    document.getElementById("gd_nam").checked = true;
+                }if(gioitinh.value=="nu"){
+                    document.getElementById("gd_nu").checked = true;
+                }
+                if(gioitinh.value=="khac"){
+                    document.getElementById("gd_khac").checked = true;
+                }
+            });
+    
+        </script>
+        </body>
+
+    </html>
